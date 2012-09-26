@@ -8,7 +8,7 @@ package fr.iutvalence.java.projets.snake;
 public class Grenouille
 {
 	/**
-	 * 2 représente une case ou se trouvera la grenouille
+	 * 2 représente une case où se trouvera la grenouille
 	 */
 
 	public final static int case_grenouille = 2;

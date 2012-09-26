@@ -29,6 +29,6 @@ public class Direction {
 	 * représente la direction Bas
 	 */
 
-	public final static int DOWn = 10;
+	public final static int DOWN = 10;
 	
 }

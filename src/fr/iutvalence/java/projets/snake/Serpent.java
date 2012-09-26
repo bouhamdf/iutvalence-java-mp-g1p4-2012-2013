@@ -19,13 +19,13 @@ public class Serpent
    public final static int tete_serpent = 4; 
    
 	/**
-	 * La taille initial du serpent
+	 * La taille initiale du serpent
 	 */
    
    public final static int taille_serpent;
    
    /**
-	 * La position intiale du serpent
+	 * La position initiale du serpent
 	 */
    
    public final static int position_serpent;

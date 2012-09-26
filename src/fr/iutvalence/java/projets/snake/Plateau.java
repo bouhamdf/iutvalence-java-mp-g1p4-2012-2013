@@ -13,6 +13,17 @@ public class Plateau
 	private int[][] grille;
 	
 	/**
+	 * Représente de la largeur
+	 */
+	private int LARGEUR = 70;
+	
+
+	/**
+	 * Représente de la longueur
+	 */
+	private int LONGUEUR = 70;
+	
+	/**
 	 * 0 représente une case vide
 	 */
 	public final static int VIDE = 0;
