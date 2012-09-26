@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+
+// FIXME écrire un commentaire correct
 /**
  * 
  * @author bouhamdf
@@ -7,6 +9,8 @@ package fr.iutvalence.java.projets.snake;
 
 public class Direction {
 
+	
+	// FIXME les constantes que l'on doit distinguer doivent obligatoirement avoir des valeurs différentes !
 	/**
 	 * représente la direction Haut
 	 */
@@ -24,7 +28,8 @@ public class Direction {
 	 */
 
 	public final static int LEFT = 10;
-	
+
+	// FIXME le nom d'une constante est entièrement en majuscules 
 	/**
 	 * représente la direction Bas
 	 */

@@ -5,6 +5,8 @@ package fr.iutvalence.java.projets.snake;
  * @version 1
  */
 
+
+// FIXME classe à supprimer pour le moment
 public class Menu
 
 {

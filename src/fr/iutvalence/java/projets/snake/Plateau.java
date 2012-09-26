@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+
+// FIXME écrire un commentaire correct, préciser notamment où est le (0,0) du repère
 /**
  * 
  * @author bouhamdf
@@ -7,6 +9,8 @@ package fr.iutvalence.java.projets.snake;
 
 public class Plateau
 {
+	
+
 	/**
 	 * Représente la grille de jeu
 	 */
@@ -33,4 +37,6 @@ public class Plateau
 	public final static int SERPENT = 3;
 	
 	
+	
+	// FIXME attributs, constructeurs, méthodes ?
 }
