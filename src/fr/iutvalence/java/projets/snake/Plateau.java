@@ -10,7 +10,7 @@ public class Plateau
 	/**
 	 * Représente la grille de jeu
 	 */
-	private int[][] grille;
+	private int[][] GRILLE;
 	
 	/**
 	 * Représente de la largeur
@@ -44,4 +44,11 @@ public class Plateau
 	public final static int SERPENT = 3;
 	
 	
+	public Plateau() {
+		this.GRILLE = new int [LARGEUR] [LONGUEUR];
+		int i = 0;
+		for i = 0
+		
+		
+	}
 }

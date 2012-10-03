@@ -9,21 +9,27 @@ public class Partie {
 	
 	// attributs
 	
-	private Plateau terrain;
+	private Plateau TERRAIN;
 	
-	private Serpent crazy_snake;
+	private Serpent CRAZY_SNAKE;
 	
-	private Grenouille crazy_frog;
+	private Grenouille CRAZY_FROGE;
 	
 	// constructeur
 	
+	public Partie (){
+	this.TERRAIN = new Plateau();
+	this.CRAZY_SNAKE = new Serpent();
+	this.CRAZY_FROGE = new Grenouille();
 	
+	}
 	
 	
 	//methodes
 	public int demarrer()
 	{
 		// ...
+		
 		return 0;
 	}
 
