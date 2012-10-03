@@ -13,14 +13,14 @@ public class Partie {
 	
 	private Serpent CRAZY_SNAKE;
 	
-	private Grenouille CRAZY_FROGE;
+	private Grenouille CRAZY_FROG;
 	
 	// constructeur
 	
 	public Partie (){
 	this.TERRAIN = new Plateau();
 	this.CRAZY_SNAKE = new Serpent();
-	this.CRAZY_FROGE = new Grenouille();
+	this.CRAZY_FROG = new Grenouille();
 	
 	}
 	
@@ -32,5 +32,6 @@ public class Partie {
 		
 		return 0;
 	}
+
 
 }

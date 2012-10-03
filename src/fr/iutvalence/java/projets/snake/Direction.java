@@ -1,4 +1,5 @@
 package fr.iutvalence.java.projets.snake;
+
 /**
  * 
  * @author bouhamdf
@@ -7,6 +8,8 @@ package fr.iutvalence.java.projets.snake;
 
 public class Direction {
 
+	
+	
 	/**
 	 * représente la direction Haut
 	 */
@@ -23,8 +26,10 @@ public class Direction {
 	 * représente la direction Gauche
 	 */
 
+
 	public final static int LEFT = 30;
 	
+
 	/**
 	 * représente la direction Bas
 	 */

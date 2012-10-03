@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+
+
 /**
  * 
  * @author bouhamdf
@@ -7,6 +9,8 @@ package fr.iutvalence.java.projets.snake;
 
 public class Plateau
 {
+	
+
 	/**
 	 * Représente la grille de jeu
 	 */
@@ -44,11 +48,12 @@ public class Plateau
 	public final static int SERPENT = 3;
 	
 	
+
 	public Plateau() {
 		this.GRILLE = new int [LARGEUR] [LONGUEUR];
-		int i = 0;
-		for i = 0
+		for i = 0 
 		
 		
 	}
+	
 }

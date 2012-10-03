@@ -17,6 +17,7 @@ public class Grenouille
 	public Grenouille(int alléa) {
 		this.POSITION_GRENOUILLE = alléa ;
 	}
+
 	
 }
 
