@@ -9,7 +9,6 @@ package fr.iutvalence.java.projets.snake;
 public class Direction {
 
 	
-	
 	/**
 	 * représente la direction Haut
 	 */

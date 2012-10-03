@@ -45,15 +45,45 @@ public class Plateau
 	/**
 	 * 3 représente une case ou se trouvera une case serpent
 	 */
-	public final static int SERPENT = 3;
+	public final static int CASE_SERPENT = 3;
 	
-	
-
+	/**
+	 * 4 représente une case ou se trouvera la tete du serpent
+	 */
+   
+   public final static int TETE_SERPENT = 4; 
+   
 	public Plateau() {
 		this.GRILLE = new int [LARGEUR] [LONGUEUR];
-		for i = 0 
-		
-		
+			for(int i = 0 ; i <= LONGUEUR ; i++)
+			{
+				for(int j = 0 ; j <= LARGEUR ; j++)
+				{
+					this.GRILLE[i][j] = 0;		//On rempli le tableau de 0
+					this.GRILLE[0][j] = 1;		//On modélise le mur gauche (la premiere colonne de la grille)
+					this.GRILLE[i][0] = 1;		//On modélise le mur du haut (la premiere ligne de la grille)
+					this.GRILLE[i][LARGEUR] = 1;//On modélise le mur du bas (la derniere ligne de la grille)
+					this.GRILLE[LONGUEUR][j] = 1;//On modélise le mur droit (la derniere colonn de la grille)
+				}
+			}
+			
 	}
+
+	@Override
+	public String toString() {
+		
+		String result= "";
+		for(int i = 0 ; i <= LONGUEUR ; i++)
+		{
+			for(int j = 0 ; j <= LARGEUR ; j++)
+			{
+				result = result+(this.GRILLE[i][j]);
+			}
+		}
+		return result;
+				
+	}
+	
+	
 	
 }
