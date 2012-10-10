@@ -6,26 +6,13 @@ package fr.iutvalence.java.projets.snake;
  */
 
 public class Serpent
-{
 
-   
-  
+{}
 	/**
-	 * La taille initiale du serpent
-	 */
-   
+	 * La taille du serpent (qui augmente à chaque grenouille mangée)
+{	
    private TAILLE_SERPENT SIZE_SNAKE;
-   
-   /**
-	 * La position initiale du serpent
-	 * 
+      
+}
 	 */
-
-   
-   public final static int POSITION_SERPENT;
-
-
-   public Serpent(){
-   this.TAILLE_SERPENT = CASE_SERPENT;
-   }
-   }
+	   
