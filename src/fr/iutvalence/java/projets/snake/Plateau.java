@@ -17,13 +17,13 @@ public class Plateau
 	/**
 	 * Représente de la largeur
 	 */
-	public final static int LARGEUR = 100;
+	public final static int LARGEUR = 25;
 	
 
 	/**
 	 * Représente de la longueur
 	 */
-	public final static int LONGUEUR = 100;
+	public final static int LONGUEUR = 25;
 	
 	/**
 	 * 0 représente une case vide
@@ -62,6 +62,10 @@ public class Plateau
 					this.grille[i][0] = MUR;		//On modélise le mur du haut (la premiere ligne de la grille)
 					this.grille[i][LONGUEUR-1] = MUR; //On modélise le mur du bas (la derniere ligne de la grille)
 					this.grille[LARGEUR-1][j] = MUR; //On modélise le mur droit (la derniere colonn de la grille)
+					this.grille[10][15]=CASE_SERPENT;
+					this.grille[11][15]=CASE_SERPENT;
+					this.grille[12][15]=CASE_SERPENT;
+					this.grille[13][15]=TETE_SERPENT;
 				}
 				
 			}

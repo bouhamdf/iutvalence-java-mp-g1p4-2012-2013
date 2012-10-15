@@ -11,13 +11,12 @@ public class Grenouille
    /**
     * position (aléatoire) de la grenouille
     */
-
-	public int POSITION_GRENOUILLE;
-	
-	/**public Grenouille(int ) {
-		this.POSITION_GRENOUILLE =  ;
-	}
-
-	*/
+	public void RandomGrenouille()
+    {
+		Random rand = new Random(); // constructeur
+		int i = rand.nextInt(25); // génération
+		int j = rand.nextInt(25); // génération
+		System.out.println(i); // affichage 
+    }
 }
 
