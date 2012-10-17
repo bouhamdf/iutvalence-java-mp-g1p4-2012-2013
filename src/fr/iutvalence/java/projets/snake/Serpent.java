@@ -1,22 +1,21 @@
 package fr.iutvalence.java.projets.snake;
-// FIXME compléter le commentaire
+// FIXME (FIXED) compléter le commentaire
 /**
- * 
+ * Classe Serpent : gère le déplacement du serpent et sa taille lors de la partie
  * @author bouhamdf
- 	* @version 1
+ * @version 1
  */
 
 public class Serpent
 
 {
 	
-	// FIXME compléter
-}
+	// FIXME (FIXED) compléter
+
 	/**
-	 * La taille du serpent (qui augmente à chaque grenouille mangée)
-{	
-   private TAILLE_SERPENT SIZE_SNAKE;
-      
-}
+	 * Dans cette Classe nous allons gérer le déplacement du serpent et 
+	 * nous allons  générer l'incrémentation du corp du serpent 
+	 * lorsque celui ci mange une grenouille. Nous allons réaliser les différentes 
+	 * fonctions qui réalisent ces actions  
 	 */
-	   
+	}   
