@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+
+//FIXME compléter le commentaire
 /**
  * 
  * @author bouhamdf
@@ -7,6 +9,14 @@ package fr.iutvalence.java.projets.snake;
 
 public class Grenouille
 {
+	
+	// FIXME définir des attributs
+	
+	// FIXME définir au moins un constructeur
+	
+	// FIXME redéfinir toString
+	
+	// FIXME écrire (dans une autre classe) une application de test basique
    
    /**
     * position (aléatoire) de la grenouille

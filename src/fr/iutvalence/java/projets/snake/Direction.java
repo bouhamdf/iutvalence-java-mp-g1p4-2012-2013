@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.snake;
 
+// FIXME compléter le commentaire
 /**
  * 
  * @author bouhamdf

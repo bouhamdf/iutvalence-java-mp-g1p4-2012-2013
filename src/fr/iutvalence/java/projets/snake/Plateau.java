@@ -1,6 +1,6 @@
 package fr.iutvalence.java.projets.snake;
 
-
+//FIXME compléter le commentaire
 /**
  * 
  * @author bouhamdf
@@ -9,11 +9,13 @@ package fr.iutvalence.java.projets.snake;
 
 public class Plateau
 {
+	//FIXME détailler le commentaire (contenu des cases)
 	/**
 	 * Représente la grille de jeu
 	 */
 	private int[][] grille;
 	
+	// FIXME définir les constantes avant les attributs
 	/**
 	 * Représente de la largeur
 	 */
@@ -51,6 +53,7 @@ public class Plateau
    
    public final static int TETE_SERPENT = 4; 
    
+   // FIXME écrire un commentaire
 	public Plateau() {
 		this.grille = new int [LARGEUR] [LONGUEUR];
 			for(int i = 0 ; i < LONGUEUR ; i++)
@@ -87,6 +90,5 @@ public class Plateau
 		return result;			
 	}
 	
-	
-	
+	// FIXME écrire (dans une autre classe) une application de test basique
 }

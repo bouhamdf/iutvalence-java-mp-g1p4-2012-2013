@@ -1,4 +1,5 @@
 package fr.iutvalence.java.projets.snake;
+// FIXME compléter le commentaire
 /**
  * 
  * @author bouhamdf
@@ -7,7 +8,10 @@ package fr.iutvalence.java.projets.snake;
 
 public class Serpent
 
-{}
+{
+	
+	// FIXME compléter
+}
 	/**
 	 * La taille du serpent (qui augmente à chaque grenouille mangée)
 {	
