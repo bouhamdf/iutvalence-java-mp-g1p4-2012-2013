@@ -1,34 +1,40 @@
 package fr.iutvalence.java.projets.snake;
 
-public class Position 
+public class Position
 {
 	private int positionX;
 	private int positionY;
-	
-	public Position(int positionX, int positionY) {
+
+	public Position(int positionX, int positionY)
+	{
 		super();
 		this.positionX = positionX;
 		this.positionY = positionY;
 	}
 
-	public int getPositionX() {
+	public int getPositionX()
+	{
 		return positionX;
 	}
 
-	public void setPositionX(int positionX) {
+	public void setPositionX(int positionX)
+	{
 		this.positionX = positionX;
 	}
 
-	public int getPositionY() {
+	public int getPositionY()
+	{
 		return positionY;
 	}
 
-	public void setPositionY(int positionY) {
+	public void setPositionY(int positionY)
+	{
 		this.positionY = positionY;
 	}
 
 	@Override
-	public int hashCode() {
+	public int hashCode()
+	{
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + positionX;
@@ -37,7 +43,8 @@ public class Position
 	}
 
 	@Override
-	public boolean equals(Object obj) {
+	public boolean equals(Object obj)
+	{
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -53,10 +60,9 @@ public class Position
 	}
 
 	@Override
-	public String toString() {
-		return "Position [positionX=" + positionX + ", positionY=" + positionY
-				+ "]";
+	public String toString()
+	{
+		return "Position [positionX=" + positionX + ", positionY=" + positionY + "]";
 	}
-	
-	
+
 }
