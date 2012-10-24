@@ -1,6 +1,5 @@
 package fr.iutvalence.java.projets.snake;
 
-// FIXME (FIXED) compléter le commentaire
 /**
  * Classe Serpent : gère le déplacement du serpent et sa taille lors de la partie
  * 
@@ -12,7 +11,7 @@ public class Serpent
 
 {
 
-	// FIXME (FIXED) compléter
+	// FIXME compléter
 
 	/**
 	 * Dans cette Classe nous allons gérer le déplacement du serpent et nous allons générer l'incrémentation du corp du

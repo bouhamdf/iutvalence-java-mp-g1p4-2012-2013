@@ -1,7 +1,7 @@
 package fr.iutvalence.java.projets.snake;
 import fr.iutvalence.java.projets.snake.Plateau;
 
-//FIXME (FIXED) compléter le commentaire
+//FIXME détailler le commentaire (qu'est ce qui caractérise une grenouille)
 /**
  * Classe Grenouille : Definit la grenouille (=2)
  * Contient la fonction RandomGrenouille
@@ -11,11 +11,10 @@ import fr.iutvalence.java.projets.snake.Plateau;
 
 public class Grenouille
 {
-	
-	// FIXME (FIXED) définir des attributs
+	// FIXME écrire un commentaire
 	private Position position;
 	
-	// FIXME (FIXED) définir au moins un constructeur
+	// FIXME écrire un commentaire
 	//Constructeur
    public Grenouille(position){
 	   this.position = new Position();   

@@ -1,12 +1,13 @@
 package fr.iutvalence.java.projets.snake;
 
-// FIXME (FIXED) compléter le commentaire
 /**
  * 
+ * Classe Direction : Sert à calculer la direction que prend le serpent
  * @author bouhamdf
- * @version 1 Classe Direction : Sert à calculer la direction que prend le serpent
+ * @version 1 
  */
 
+// FIXME redéfinir cette classe sous la forme d'une énumération (à discuter)
 public class Direction
 {
 

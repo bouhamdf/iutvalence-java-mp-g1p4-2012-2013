@@ -1,6 +1,5 @@
 package fr.iutvalence.java.projets.snake;
 
-//FIXME (FIXED) compléter le commentaire
 /**
  * Classe Plateau : Défini tous les éléments du plateau (taille et contenu des cases)
  * 
@@ -10,7 +9,6 @@ package fr.iutvalence.java.projets.snake;
 
 public class Plateau
 {
-	// FIXME (FIXED) définir les constantes avant les attributs
 	/**
 	 * Représente de la largeur
 	 */
@@ -21,6 +19,8 @@ public class Plateau
 	 */
 	public final static int HAUTEUR = 25;
 
+	
+	// FIXME redéfinir les constantes spécifiant le contenu des cases sous la forme d'une énumération (à discuter)
 	/**
 	 * 0 représente une case vide
 	 */
@@ -47,13 +47,12 @@ public class Plateau
 
 	public final static int TETE_SERPENT = 4;
 
-	// FIXME (FIXED) détailler le commentaire (contenu des cases)
 	/**
 	 * Représente la grille à deux dimensions du jeu Les cases contiennent les constantes définies au-dessus
 	 */
 	private int[][] grille;
 
-	// FIXME (FIXED) écrire un commentaire
+	// FIXME détailler le commentaire
 	/**
 	 * Matérialise un nouveau Plateau de x cases de hauteur et de largeur. Les cases contiennent les constantes définies
 	 * au-dessus.
@@ -96,5 +95,4 @@ public class Plateau
 		return result;
 	}
 
-	// FIXME (FIXED) écrire (dans une autre classe) une application de test basique
 }
