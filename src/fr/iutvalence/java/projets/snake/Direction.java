@@ -7,28 +7,30 @@ package fr.iutvalence.java.projets.snake;
  * @version 1 
  */
 
-// FIXME redéfinir cette classe sous la forme d'une énumération (à discuter)
-public class Direction
+// FIXME (FIXED) redéfinir cette classe sous la forme d'une énumération (à discuter)
+public enum Direction
 {
 
 	/**
-	 * représente la direction Haut (=10)
+	 * représente la direction Haut
 	 */
-	public final static int UP = 10;
-
+	UP, 
+	
 	/**
-	 * représente la direction Droite (=20)
+	 * représente la direction Droite
 	 */
-	public final static int RIGHT = 20;
-
+	RIGHT, 
+	
 	/**
-	 * représente la direction Gauche (=30)
+	 * représente la direction Gauche
 	 */
-	public final static int LEFT = 30;
-
+	LEFT, 
+	
 	/**
-	 * représente la direction Bas (=40)
+	 * représente la direction Bas
 	 */
-	public final static int DOWN = 40;
+	DOWN
+	
+	/*public final static int UP = 10, RIGHT = 20, LEFT = 30, DOWN = 40;*/
 
 }

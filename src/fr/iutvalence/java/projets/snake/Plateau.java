@@ -20,44 +20,33 @@ public class Plateau
 	public final static int HAUTEUR = 25;
 
 	
-	// FIXME redéfinir les constantes spécifiant le contenu des cases sous la forme d'une énumération (à discuter)
+	// FIXME (FIXED) redéfinir les constantes spécifiant le contenu des cases sous la forme d'une énumération (à discuter)
 	/**
 	 * 0 représente une case vide
-	 */
-	public final static int VIDE = 0;
-
-	/**
 	 * 1 représente un mur
-	 */
-	public final static int MUR = 1;
-
-	/**
-	 * 2 représente une case ou se trouvera la grenouille
-	 */
-	public final static int GRENOUILLE = 2;
-
-	/**
+	 * 2 représente une case où se trouvera la grenouille
 	 * 3 représente une case ou se trouvera une case serpent
-	 */
-	public final static int CASE_SERPENT = 3;
-
-	/**
 	 * 4 représente une case ou se trouvera la tete du serpent
 	 */
-
-	public final static int TETE_SERPENT = 4;
+	
+	
+		
 
 	/**
 	 * Représente la grille à deux dimensions du jeu Les cases contiennent les constantes définies au-dessus
 	 */
 	private int[][] grille;
 
-	// FIXME détailler le commentaire
+	// FIXME (FIXED) détailler le commentaire
 	/**
-	 * Matérialise un nouveau Plateau de x cases de hauteur et de largeur. Les cases contiennent les constantes définies
-	 * au-dessus.
+	 * Matérialise un nouveau Plateau de x cases hauteur et largeur. 
+	 * Les cases contiennent les constantes définies au-dessus.
+	 * La plateau est initialisé avec des "VIDE" dans toute la grille,
+	 * Puis avec un MUR tout autour de la grille,
+	 * Ensuite le SERPENT sur la grille,
+	 * Enfin la grenouille est initialisée aléatoirement. 
+	 * @param: aucun
 	 */
-
 	public Plateau()
 	{
 		this.grille = new int[LARGEUR][HAUTEUR];
@@ -65,17 +54,16 @@ public class Plateau
 		{
 			for (int j = 0; j < LARGEUR; j++)
 			{
-				this.grille[i][j] = VIDE;		// On rempli le tableau de 0
-				this.grille[0][j] = MUR;		// On modélise le mur gauche (la premiere colonne de la grille)
-				this.grille[i][0] = MUR;		// On modélise le mur du haut (la premiere ligne de la grille)
-				this.grille[i][HAUTEUR - 1] = MUR; // On modélise le mur du bas (la derniere ligne de la grille)
-				this.grille[LARGEUR - 1][j] = MUR; // On modélise le mur droit (la derniere colonn de la grille)
-				this.grille[10][15] = CASE_SERPENT;
-				this.grille[11][15] = CASE_SERPENT;
-				this.grille[12][15] = CASE_SERPENT;
-				this.grille[13][15] = TETE_SERPENT;
+				this.grille[i][j] = Case.VIDE;		// On rempli le tableau de 0
+				this.grille[0][j] = Case.MUR;		// On modélise le mur gauche (la premiere colonne de la grille)
+				this.grille[i][0] = Case.MUR;		// On modélise le mur du haut (la premiere ligne de la grille)
+				this.grille[i][HAUTEUR - 1] = Case.MUR; // On modélise le mur du bas (la derniere ligne de la grille)
+				this.grille[LARGEUR - 1][j] = Case.MUR; // On modélise le mur droit (la derniere colonn de la grille)
+				this.grille[10][15] = Case.CASE_SERPENT;
+				this.grille[11][15] = Case.CASE_SERPENT;
+				this.grille[12][15] = Case.CASE_SERPENT;
+				this.grille[13][15] = Case.TETE_SERPENT;
 			}
-
 		}
 	}
 
@@ -88,7 +76,16 @@ public class Plateau
 		{
 			for (int j = 0; j < LARGEUR; j++)
 			{
-				result = result + this.grille[i][j];
+				switch(this.grille[i][j]) 
+				{
+					case VIDE : result = result + "0";
+					case MUR : result = result + "1";
+					case CASE_SERPENT : result = result + "3";
+					case TETE_SERPENT : result = result + "4";
+					default : result = result + "0";
+				}
+				
+				//result = result + this.grille[i][j];
 			}
 			result = result + '\n';
 		}

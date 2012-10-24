@@ -1,50 +1,89 @@
 package fr.iutvalence.java.projets.snake;
 
-// FIXME écrire un commentaire
+// FIXME (FIXED) écrire un commentaire
+
+/**
+ * Position : permet de définir l'abscisse et l'ordonnée (Utilie pour serpent/grenouille)
+ * @author bouhamdf
+ * @version 1 Position 
+ */
+
 public class Position
 {
 
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	private int positionX;
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * x représente l'abscisse d'un objet (grenouile, serpent)
+	 */
+	private int x;
 
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	private int positionY;
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * y représente l'ordonnée d'un objet (grenouile, serpent)
+	 */
+	private int y;
 
-	// FIXME écrire un commentaire
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * Méthode Position : 
+	 * 	Appel du super-constructeur;
+	 * 	Initialise les abscisses et ordonnées de l'objet	
+	 * @param positionX
+	 * @param positionY
+	 */
 	public Position(int positionX, int positionY)
 	{
 		super();
-		this.positionX = positionX;
-		this.positionY = positionY;
+		this.x = positionX;
+		this.y = positionY;
 	}
 
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	public int getPositionX()
+	
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * Méthode magique getX : Retourne l'abscisse de l'objet
+	 * @return x
+	 */
+	public int getX()
 	{
-		return positionX;
+		return x;
 	}
 
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	public void setPositionX(int positionX)
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * Méthode magique setX : Change l'abscisse de l'objet
+	 * @param positionX
+	 */
+	public void setX(int positionX)
 	{
-		this.positionX = positionX;
+		this.x = positionX;
 	}
 
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	public int getPositionY()
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * Méthode magique getY :
+	 * 	Retourne l'ordonnée y de l'objet
+	 * @return y
+	 */
+	public int getY()
 	{
-		return positionY;
+		return y;
 	}
-	// FIXME renommer plus simplement
-	// FIXME écrire un commentaire
-	public void setPositionY(int positionY)
+	
+	// FIXME (FIXED) renommer plus simplement
+	// FIXME (FIXED) écrire un commentaire
+	/**
+	 * Méthode magique setY : Change l'ordonnée de l'objet
+	 * @param positionY
+	 */
+	public void setY(int positionY)
 	{
-		this.positionY = positionY;
+		this.y = positionY;
 	}
 
 	@Override
@@ -52,8 +91,8 @@ public class Position
 	{
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + positionX;
-		result = prime * result + positionY;
+		result = prime * result + x;
+		result = prime * result + y;
 		return result;
 	}
 
@@ -67,9 +106,9 @@ public class Position
 		if (getClass() != obj.getClass())
 			return false;
 		Position other = (Position) obj;
-		if (positionX != other.positionX)
+		if (x != other.x)
 			return false;
-		if (positionY != other.positionY)
+		if (y != other.y)
 			return false;
 		return true;
 	}
@@ -77,7 +116,7 @@ public class Position
 	@Override
 	public String toString()
 	{
-		return "Position [positionX=" + positionX + ", positionY=" + positionY + "]";
+		return "Position [positionX=" + x + ", positionY=" + y + "]";
 	}
 
 }

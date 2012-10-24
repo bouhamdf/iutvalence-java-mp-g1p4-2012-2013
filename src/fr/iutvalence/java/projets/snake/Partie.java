@@ -1,6 +1,5 @@
 package fr.iutvalence.java.projets.snake;
 
-
 /**
  * Partie : Contient toutes les éléments liés à une Partie
  * @author bouhamdf
@@ -29,9 +28,11 @@ public class Partie
 	private Grenouille crazyFrog;
 
 	// constructeur
-	// FIXME  détailler le commentaire (dire dans quel "état" est la partie construite)
+	// FIXME (FIXED) détailler le commentaire (dire dans quel "état" est la partie construite)
 	/**
 	 * Nouvelle partie composée d'un plateau de jeu, d'une grenouille et d'un serpent.
+	 * Partie : Iniatialise un nouveau Plateau, un Serpent et une Grenouille
+	 * @param: aucun
 	 */
 	public Partie()
 	{
@@ -41,5 +42,9 @@ public class Partie
 	}
 	
 	// FIXME ajouter une méthode pour démarrer la partie
-
+	/*public DemarrerPartie()
+	{
+		new Partie();
+	}*/
+	
 }
