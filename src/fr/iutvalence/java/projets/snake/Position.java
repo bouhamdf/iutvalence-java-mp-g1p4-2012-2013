@@ -3,7 +3,7 @@ package fr.iutvalence.java.projets.snake;
 // FIXME (FIXED) écrire un commentaire
 
 /**
- * Position : permet de définir l'abscisse et l'ordonnée (Utilie pour serpent/grenouille)
+ * Position : permet de définir l'abscisse et l'ordonnée (Utile pour serpent/grenouille)
  * @author bouhamdf
  * @version 1 Position 
  */

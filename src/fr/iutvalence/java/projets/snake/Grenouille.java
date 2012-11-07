@@ -1,6 +1,7 @@
 package fr.iutvalence.java.projets.snake;
+import java.util.Random;
 import fr.iutvalence.java.projets.snake.Plateau;
-
+import fr.iutvalence.java.projets.snake.Position;
 //FIXME détailler le commentaire (qu'est ce qui caractérise une grenouille)
 /**
  * Classe Grenouille : Definit la grenouille (=2)
@@ -16,23 +17,32 @@ public class Grenouille
 	
 	// FIXME écrire un commentaire
 	//Constructeur
-   public Grenouille(position){
-	   this.position = new Position();   
+   public Grenouille()
+   {
+	   int x = RandomGrenouille();
+	   int y = RandomGrenouille();
+	 
+	   this.position = new Position(x,y);  
    }
    
 	// FIXME redéfinir toString
-	
+	public String toString()
+	{
+		
+		String result = "Position X = "+this.x+"\n Position Y = "+this.y;
+		return result;
+	}
 	// FIXME (FIXED) écrire (dans une autre classe) une application de test basique
 	
    /**
     * position (aléatoire) de la grenouille
+    * @return 
     */
-	public void RandomGrenouille()
+	public int RandomGrenouille()
     {
 		Random rand = new Random(); // constructeur
-		int l = rand.nextInt(LARGEUR); // génération
-		int h = rand.nextInt(HAUTEUR); // génération
-		System.out.println(i); // affichage 
+		int i = rand.nextInt(Plateau.LARGEUR); // génération
+		return i;
     }
 }
 
