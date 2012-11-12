@@ -1,4 +1,7 @@
 package fr.iutvalence.java.projets.snake;
+import java.util.Random;
+
+import fr.iutvalence.java.projets.snake.*;
 
 // FIXME (FIXED) écrire un commentaire
 
@@ -118,5 +121,4 @@ public class Position
 	{
 		return "Position [positionX=" + x + ", positionY=" + y + "]";
 	}
-
 }

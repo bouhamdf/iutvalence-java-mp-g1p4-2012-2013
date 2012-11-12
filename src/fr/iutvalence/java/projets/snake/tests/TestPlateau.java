@@ -1,6 +1,6 @@
 package fr.iutvalence.java.projets.snake.tests;
-
-import fr.iutvalence.java.projets.snake.Plateau;
+import fr.iutvalence.java.projets.snake.*;
+import java.lang.Enum;
 
 /**
  * Classe test Plateau : simule le plateau de jeu en le materielisant par des chiffres (ex: 0 case vide, 1 case mur, 2
@@ -12,9 +12,8 @@ import fr.iutvalence.java.projets.snake.Plateau;
 public class TestPlateau
 {
 	/**
-	 * methode simulant le plateau de jeu
-	 * 
-	 * @param args Aucun
+	 * méthode simulant le plateau de jeu
+	 * @param args
 	 */
 	public static void main(String[] args)
 	{

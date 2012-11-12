@@ -1,23 +1,25 @@
 package fr.iutvalence.java.projets.snake.tests;
 
-import fr.iutvalence.java.projets.snake.Grenouille;
-import fr.iutvalence.java.projets.snake.Plateau;
-import fr.iutvalence.java.projets.snake.Position;
+import java.util.Random;
+import fr.iutvalence.java.projets.snake.*;
 
-
-// FIXME à compléter
+// FIXME (FIXED) à compléter
 /**
- * Classe Test Grenouille : Simule le positionnement au hasard d'une grenuille
- * 
+ * Classe Test Grenouille : Simule le positionnement au hasard d'une grenouille
  * @author mahmouho
  * @version 1
  */
 public class TestGrenouille
 {
-	public static void main(String[] args)
+	
+	/**
+	 * Simule le positionnement au hasard d'une grenouille
+	 * Affiche la position d'une grenouille
+	 * @param args
+	 */
+	public static void main(final String[] args)
 	{
 		Grenouille g = new Grenouille();
-		test = g.getX();
-		system.out.println(test);
+		System.out.println(g);		
 	}
 }
