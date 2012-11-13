@@ -22,11 +22,10 @@ public class Grenouille
     */
 public Grenouille()
    {
-	// FIXME réécrire la même chose en une seule ligne
-	   int x = randomGrenouille();
-	   int y = randomGrenouille();
+	// FIXME (FIXED) réécrire la même chose en une seule ligne
+	   int x = randomGrenouille(), y = randomGrenouille();
 	 
-		this.position = new Position(x,y);  
+	   this.position = new Position(x,y);  
 	}
    
 
@@ -38,13 +37,13 @@ public Grenouille()
 		return "Position de la Grenouille : " + this.position;
 	}
 	
-	// FIXME déclarer cette méthode en privé, elle n'est utilisée qu'en interne
+	// FIXME (FIXED) déclarer cette méthode en privé, elle n'est utilisée qu'en interne
    /**
     * position (aléatoire) de la grenouille
     * retourne un nombre au hasard entre 0 et LARGEUR (Taille max de la grille)
     * @return i
     */
-	public int randomGrenouille()
+	private int randomGrenouille()
     {
 		Random rand = new Random(); // constructeur
 		int i = rand.nextInt(Plateau.LARGEUR); // génération

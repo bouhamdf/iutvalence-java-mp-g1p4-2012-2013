@@ -52,9 +52,19 @@ public class Serpent
 		int i = 0;
 		for (Position position : positions)
 		{
-			result = result + this.positions[i] + "\n";
+			result = result + "Case " + i + " : " + this.positions[i] + "\n";
+			i++;
 		}
 		return result;
 	}
 	
+	/**
+	 * Permet d'obtenir la position d'un élément du serpent se trouvant dans la case numCase
+	 * @param numCase
+	 * @return une position
+	 */
+	public Position getPos(int numCase)
+	{
+		return this.positions[numCase];
+	}
 }

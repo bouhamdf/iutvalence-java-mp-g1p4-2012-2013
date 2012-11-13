@@ -35,6 +35,7 @@ public class Plateau
 	{		
 		//Déclaration des objets
 		Grenouille g = new Grenouille();
+		Serpent s = new Serpent();
 		
 		//Initialisation de la grille
 		this.grille = new int[LARGEUR][HAUTEUR];
