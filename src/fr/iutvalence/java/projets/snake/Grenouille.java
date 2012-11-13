@@ -25,13 +25,13 @@ public class Grenouille
     * Constructeur Grenouille
     * La méthode RandomGrenouille est utilisée pour établir une position au hasard dans la grille.
     */
-public Grenouille()
-   {
-	   int x = randomGrenouille();
-	   int y = randomGrenouille();
+	public Grenouille()
+	{
+		int x = randomGrenouille();
+		int y = randomGrenouille();
 	 
-	   this.position = new Position(x,y);  
-   }
+		this.position = new Position(x,y);  
+	}
    
 	// FIXME (FIXED) redéfinir toString
 	/**
@@ -46,7 +46,8 @@ public Grenouille()
 	// FIXME (FIXED) écrire (dans une autre classe) une application de test basique
    /**
     * position (aléatoire) de la grenouille
-    * @return un nombre au hasard entre 0 et LARGEUR (Taille max de la grille)
+    * retourne un nombre au hasard entre 0 et LARGEUR (Taille max de la grille)
+    * @return i
     */
 	public int randomGrenouille()
     {
@@ -54,5 +55,26 @@ public Grenouille()
 		int i = rand.nextInt(Plateau.LARGEUR); // génération
 		return i;
     }
+	
+	
+	/**
+	 * Méthode magique getPosX : Retourne l'abscisse d'une grenouille
+	 * @return x
+	 */
+	public int getPosX()
+	{
+		int x = this.position.getX();
+		return x;
+	}
+	
+	/**
+	 * Méthode magique getPosY : Retourne l'ordonnée d'une grenouille
+	 * @return y
+	 */
+	public int getPosY()
+	{
+		int y = this.position.getY();
+		return y;
+	}
 }
 

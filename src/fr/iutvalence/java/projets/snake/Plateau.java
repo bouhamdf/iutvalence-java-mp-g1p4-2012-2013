@@ -36,14 +36,20 @@ public class Plateau
 	 */
 	public Plateau()
 	{		
+		//Déclaration des objets
+		Grenouille g = new Grenouille();
+		
+		//Initialisation de la grille
 		this.grille = new int[LARGEUR][HAUTEUR];
+		
+		
+		
 		for (int i = 0; i < HAUTEUR; i++)
 		{
 			for (int j = 0; j < LARGEUR; j++)
 			{
-				
+				//Gestion cases vides et murs
 				this.grille[i][j] = Case.VIDE.nomCase();		// On rempli le tableau de 0
-				
 				this.grille[0][j] = Case.MUR.nomCase();		// On modélise le mur gauche (la premiere colonne de la grille)
 				this.grille[i][0] = Case.MUR.nomCase();		// On modélise le mur du haut (la premiere ligne de la grille)
 				this.grille[i][HAUTEUR - 1] = Case.MUR.nomCase(); // On modélise le mur du bas (la derniere ligne de la grille)
@@ -51,10 +57,14 @@ public class Plateau
 			}
 		}
 		
+		//Insertion du serpent
 		this.grille[10][15] = Case.CASE_SERPENT.nomCase();
 		this.grille[11][15] = Case.CASE_SERPENT.nomCase();
 		this.grille[12][15] = Case.CASE_SERPENT.nomCase();
 		this.grille[13][15] = Case.TETE_SERPENT.nomCase();
+		
+		//Insertion de la grenouille
+		this.grille[g.getPosX()][g.getPosY()] = Case.GRENOUILLE.nomCase();
 		
 	}
 
