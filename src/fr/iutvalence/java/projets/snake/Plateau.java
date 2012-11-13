@@ -24,15 +24,12 @@ public class Plateau
 	 */
 	private int[][] grille;
 
-	// FIXME (FIXED) détailler le commentaire
 	/**
 	 * Matérialise un nouveau Plateau de x cases hauteur et largeur. 
-	 * Les cases contiennent les constantes définies au-dessus.
 	 * La plateau est initialisé avec des "VIDE" dans toute la grille,
 	 * Puis avec un MUR tout autour de la grille,
 	 * Ensuite le SERPENT sur la grille,
 	 * Enfin la grenouille est initialisée aléatoirement. 
-	 * @param: aucun
 	 */
 	public Plateau()
 	{		

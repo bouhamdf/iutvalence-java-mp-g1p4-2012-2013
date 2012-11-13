@@ -28,7 +28,6 @@ public class Partie
 	private Grenouille crazyFrog;
 
 	// constructeur
-	// FIXME (FIXED) détailler le commentaire (dire dans quel "état" est la partie construite)
 	/**
 	 * Nouvelle partie composée d'un plateau de jeu, d'une grenouille et d'un serpent.
 	 * Partie : Iniatialise un nouveau Plateau, un Serpent et une Grenouille

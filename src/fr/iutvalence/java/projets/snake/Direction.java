@@ -7,7 +7,6 @@ package fr.iutvalence.java.projets.snake;
  * @version 1 
  */
 
-// FIXME (FIXED) redéfinir cette classe sous la forme d'une énumération (à discuter)
 public enum Direction
 {
 

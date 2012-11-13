@@ -3,7 +3,6 @@ package fr.iutvalence.java.projets.snake.tests;
 import java.util.Random;
 import fr.iutvalence.java.projets.snake.*;
 
-// FIXME (FIXED) à compléter
 /**
  * Classe Test Grenouille : Simule le positionnement au hasard d'une grenouille
  * @author mahmouho
