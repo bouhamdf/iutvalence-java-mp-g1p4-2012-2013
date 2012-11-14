@@ -21,14 +21,9 @@ public class TestSerpent
 		
 		System.out.println("\nPosition de la case " + i + " " + p);
 		
-		System.out.println("\nPosition X : " + s.getPosX(p));
+		System.out.println("\nPosition X : " + p.getX());
 		
-		System.out.println("\nPosition Y : " + s.getPosY(p));
-		
-		for(int z = 0; z < 3; z++)
-		{
-			System.out.println(s.avancer());
-		}
+		System.out.println("\nPosition Y : " + p.getY());
 	
 	}
 }

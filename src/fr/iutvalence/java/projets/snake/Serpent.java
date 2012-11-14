@@ -70,40 +70,20 @@ public class Serpent
 		return this.positions[numCase];
 	}
 	
+	//FIXME flo : commentaire a compléter
 	/**
-	 * Permet d'obtenir l'abscisse d'un élément du serpent
-	 * @param posX
-	 * @return x
+	 * Fais avancer le serpent
+	 * @return
 	 */
-	public int getPosX(Position posX)
-	{
-		int x = posX.getX();
-		return x;
-	}
-	
-	/**
-	 * Permet d'obtenir l'ordonnée d'un élément du serpent
-	 * @param posY
-	 * @return y
-	 */
-	public int getPosY(Position posY)
-	{
-		int y = posY.getY();
-		return y;
-	}
-	
-	public String avancer()
-	{
-		String result ="";
+	public void avancer()
+	{ 
 		for (int i = 0; i < this.tailleSerpent; i++)
 		{
 			Position pos = this.getElements(i);
-			int x = this.getPosX(pos);
-			int y = this.getPosY(pos);
-			this.positions[i] = new Position(x+1,y);			
-			result = result + "\n" + this.positions[i];
-		}
+			int x = pos.getX();
+			int y = pos.getY();
 		
-		return result;
+			this.positions[i] = new Position(x,y-1);			
+		}
 	}
 }

@@ -40,13 +40,27 @@ public class Partie
 		this.crazyFrog = new Grenouille();
 	}
 	
-	// FIXME ajouter une méthode pour démarrer la partie
-	public demarrer()
-	{
-		Partie p = new Partie();
+	// FIXME (FIXED) ajouter une méthode pour démarrer la partie
+	/**
+	 * Demarre une partie
+	 */
+	public void demarrer()
+	{		
+		this.terrain.setGrenouille(this.crazyFrog);
+		
 		for(int i = 0; i<20; i++)
 		{
-			System.out.println(p);
+			Serpent s = this.crazySnake;
+			Plateau t = this.terrain;
+			Grenouille g = this.crazyFrog;
+			
+			s.avancer();	
+			t.setSerpent(s);
+			
+			Position p = s.getElements(s.tailleSerpent-1);
+			t.setVide(p);
+			
+			System.out.println(t);
 			
 			try
 			{

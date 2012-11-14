@@ -32,11 +32,7 @@ public class Plateau
 	 * Enfin la grenouille est initialisée aléatoirement. 
 	 */
 	public Plateau()
-	{		
-		//Déclaration des objets
-		Grenouille g = new Grenouille();
-		Serpent s = new Serpent();
-		
+	{				
 		//Initialisation de la grille
 		this.grille = new int[LARGEUR][HAUTEUR];
 		
@@ -51,35 +47,7 @@ public class Plateau
 				this.grille[i][HAUTEUR - 1] = Case.MUR.nomCase(); // On modélise le mur du bas (la derniere ligne de la grille)
 				this.grille[LARGEUR - 1][j] = Case.MUR.nomCase(); // On modélise le mur droit (la derniere colonn de la grille)
 			}
-		}
-		//Insertion du serpent
-			//Insertion tete
-		int taille = s.tailleSerpent;
-		Position t = s.getElements(0);
-		int xTete = s.getPosX(t), yTete = s.getPosY(t);
-		this.grille[xTete][yTete] = Case.TETE_SERPENT.nomCase();
-		
-			//Insertion Corps
-		for(int k = 1; k < taille-1; k++)
-		{
-			Position c = s.getElements(k);
-			int x = s.getPosX(c), y = s.getPosY(c);
-			this.grille[x][y] = Case.CASE_SERPENT.nomCase();
-		}
-		
-			//Insertion queue du serpent
-		Position q = s.getElements(taille-1);
-		int xQueue = s.getPosX(q), yQueue = s.getPosY(q);
-		this.grille[xQueue][yQueue] = Case.QUEUE_SERPENT.nomCase();
-		
-		/*for(int z = 0; z < 100; z++)
-		{
-			s.avancer();
-		}*/
-		
-		//Insertion de la grenouille
-		this.grille[g.getPosX()][g.getPosY()] = Case.GRENOUILLE.nomCase();
-		
+		}		
 	}
 
 	@Override
@@ -96,6 +64,77 @@ public class Plateau
 			result = result + '\n';
 		}
 		return result;
+	}
+	
+	/**
+	 * Insère le serpent dans la grille
+	 * @param s
+	 */
+	public void setSerpent(Serpent s)
+	{
+			//Insertion du serpent
+			//Insertion tete
+		
+		int taille = s.tailleSerpent;
+		Position t = s.getElements(0);
+		int xTete = t.getX(), yTete = t.getY();
+		this.grille[xTete][yTete] = Case.TETE_SERPENT.nomCase();
+		
+			//Insertion Corps
+		for(int k = 1; k < taille-1; k++)
+		{
+			Position c = s.getElements(k);
+			int x = c.getX(), y = c.getY();
+			this.grille[x][y] = Case.CASE_SERPENT.nomCase();
+		}
+		
+			//Insertion queue du serpent
+		Position q = s.getElements(taille-1);
+		int xQueue = q.getX(), yQueue = q.getY();
+		this.grille[xQueue][yQueue] = Case.QUEUE_SERPENT.nomCase();
+	}
+	
+	/**
+	 * Insère la grenouille dans la grille
+	 * @param g
+	 */
+	public void setGrenouille(Grenouille g)
+	{
+		//Insertion de la grenouille
+		this.grille[g.getPosX()][g.getPosY()] = Case.GRENOUILLE.nomCase();
+	}
+	
+	/**
+	 * Met un zero dans la grille à la position donnée
+	 * @param pos
+	 */
+	public void setVide(Position pos)
+	{
+		int x = pos.getX(), y = pos.getY();
+		this.grille[x][y+1] = Case.VIDE.nomCase();
+	}
+	
+	/**
+	 * Verifie que la grenouille ne soit pas sur un élément du serpent
+	 * @param g
+	 * @param s
+	 */
+	public void verifGrenouille(Grenouille g, Serpent s)
+	{
+		for(int i=0; i<s.tailleSerpent;i++)
+		{
+			Position posSerpent = s.getElements(i);
+			int xSerpent = t.getX(), ySerpent = t.getY();
+			
+			int xGrenouille = g.getPosX(), yGrenouille = g.getPosY();
+			
+			if(xSerpent == xGrenouille || ySerpent==yGrenouille)
+			{
+				
+			}
+			
+			
+		}
 	}
 
 }

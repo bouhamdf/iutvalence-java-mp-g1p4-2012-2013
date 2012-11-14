@@ -26,5 +26,8 @@ public class TestGrenouille
 		System.out.println("\nTest de getPosX : "+g.getPosX()+"\n");
 		
 		System.out.println("Test de getPosY : "+g.getPosY()+"\n");
+		
+		g.setPos();
+		System.out.println("Test de setPos : "+g+"\n");
 	}
 }

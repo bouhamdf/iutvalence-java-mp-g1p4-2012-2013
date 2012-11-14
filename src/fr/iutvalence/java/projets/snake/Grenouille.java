@@ -70,5 +70,14 @@ public Grenouille()
 		int y = this.position.getY();
 		return y;
 	}
+	
+	/**
+	 * Change la position de la grenouille (utile dans le cas ou elle est sur le serpent)
+	 */
+	public void setPos()
+	{
+		 int x = randomGrenouille(), y = randomGrenouille();
+		 this.position = new Position(x,y);  		 
+	}
 }
 
