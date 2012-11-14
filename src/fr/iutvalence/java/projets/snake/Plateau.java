@@ -40,8 +40,6 @@ public class Plateau
 		//Initialisation de la grille
 		this.grille = new int[LARGEUR][HAUTEUR];
 		
-		
-		
 		for (int i = 0; i < HAUTEUR; i++)
 		{
 			for (int j = 0; j < LARGEUR; j++)
@@ -54,12 +52,30 @@ public class Plateau
 				this.grille[LARGEUR - 1][j] = Case.MUR.nomCase(); // On modélise le mur droit (la derniere colonn de la grille)
 			}
 		}
-		
 		//Insertion du serpent
-		this.grille[10][15] = Case.CASE_SERPENT.nomCase();
-		this.grille[11][15] = Case.CASE_SERPENT.nomCase();
-		this.grille[12][15] = Case.CASE_SERPENT.nomCase();
-		this.grille[13][15] = Case.TETE_SERPENT.nomCase();
+			//Insertion tete
+		int taille = s.tailleSerpent;
+		Position t = s.getElements(0);
+		int xTete = s.getPosX(t), yTete = s.getPosY(t);
+		this.grille[xTete][yTete] = Case.TETE_SERPENT.nomCase();
+		
+			//Insertion Corps
+		for(int k = 1; k < taille-1; k++)
+		{
+			Position c = s.getElements(k);
+			int x = s.getPosX(c), y = s.getPosY(c);
+			this.grille[x][y] = Case.CASE_SERPENT.nomCase();
+		}
+		
+			//Insertion queue du serpent
+		Position q = s.getElements(taille-1);
+		int xQueue = s.getPosX(q), yQueue = s.getPosY(q);
+		this.grille[xQueue][yQueue] = Case.QUEUE_SERPENT.nomCase();
+		
+		/*for(int z = 0; z < 100; z++)
+		{
+			s.avancer();
+		}*/
 		
 		//Insertion de la grenouille
 		this.grille[g.getPosX()][g.getPosY()] = Case.GRENOUILLE.nomCase();

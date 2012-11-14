@@ -17,6 +17,18 @@ public class TestSerpent
 		
 		//test méthode getPos
 		int i = 0;
-		System.out.println("\nPosition de la case " + i + " " + s.getPos(i));
+		Position p = s.getElements(i);
+		
+		System.out.println("\nPosition de la case " + i + " " + p);
+		
+		System.out.println("\nPosition X : " + s.getPosX(p));
+		
+		System.out.println("\nPosition Y : " + s.getPosY(p));
+		
+		for(int z = 0; z < 3; z++)
+		{
+			System.out.println(s.avancer());
+		}
+	
 	}
 }

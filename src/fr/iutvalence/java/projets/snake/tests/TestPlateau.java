@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.snake.tests;
 import fr.iutvalence.java.projets.snake.*;
+
 import java.lang.Enum;
 
 /**
@@ -17,6 +18,6 @@ public class TestPlateau
 	 */
 	public static void main(String[] args)
 	{
-		System.out.println(new Plateau());
+		System.out.print("BLA");
 	}
 }

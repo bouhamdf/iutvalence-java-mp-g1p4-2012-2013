@@ -15,8 +15,9 @@ public class Serpent
 	// FIXME compléter
 	/**
 	 * Représente la taille du serpent à un moment donné de la partie (Initialisé à 4)
+	 * Public car utilisé dans la classe Plateau
 	 */
-	private int tailleSerpent = 4;
+	public int tailleSerpent = 5;
 	
 	
 	/**
@@ -35,10 +36,11 @@ public class Serpent
 		//Initialisation de la grille
 		this.positions = new Position[tailleSerpent];
 		
-		this.positions[0] = new Position(10,15);
-		this.positions[1] = new Position(11,15);
-		this.positions[2] = new Position(12,15);
-		this.positions[3] = new Position(13,15);
+		this.positions[0] = new Position(12,10);
+		this.positions[1] = new Position(12,11);
+		this.positions[2] = new Position(12,12);
+		this.positions[3] = new Position(12,13);
+		this.positions[4] = new Position(12,14);
 	}
 	
 	/**
@@ -63,8 +65,45 @@ public class Serpent
 	 * @param numCase
 	 * @return une position
 	 */
-	public Position getPos(int numCase)
+	public Position getElements(int numCase)
 	{
 		return this.positions[numCase];
+	}
+	
+	/**
+	 * Permet d'obtenir l'abscisse d'un élément du serpent
+	 * @param posX
+	 * @return x
+	 */
+	public int getPosX(Position posX)
+	{
+		int x = posX.getX();
+		return x;
+	}
+	
+	/**
+	 * Permet d'obtenir l'ordonnée d'un élément du serpent
+	 * @param posY
+	 * @return y
+	 */
+	public int getPosY(Position posY)
+	{
+		int y = posY.getY();
+		return y;
+	}
+	
+	public String avancer()
+	{
+		String result ="";
+		for (int i = 0; i < this.tailleSerpent; i++)
+		{
+			Position pos = this.getElements(i);
+			int x = this.getPosX(pos);
+			int y = this.getPosY(pos);
+			this.positions[i] = new Position(x+1,y);			
+			result = result + "\n" + this.positions[i];
+		}
+		
+		return result;
 	}
 }

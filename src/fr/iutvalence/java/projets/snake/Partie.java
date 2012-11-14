@@ -41,9 +41,22 @@ public class Partie
 	}
 	
 	// FIXME ajouter une méthode pour démarrer la partie
-	/*public DemarrerPartie()
+	public demarrer()
 	{
-		new Partie();
-	}*/
+		Partie p = new Partie();
+		for(int i = 0; i<20; i++)
+		{
+			System.out.println(p);
+			
+			try
+			{
+				Thread.sleep(1000);
+			}
+			catch (InterruptedException e)
+			{
+				// à ignorer
+			}
+		}
+	}
 	
 }

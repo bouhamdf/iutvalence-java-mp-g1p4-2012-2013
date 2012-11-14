@@ -46,7 +46,7 @@ public Grenouille()
 	private int randomGrenouille()
     {
 		Random rand = new Random(); // constructeur
-		int i = rand.nextInt(Plateau.LARGEUR); // génération
+		int i = rand.nextInt(Plateau.LARGEUR-2)+1; // génération
 		return i;
     }
 	
