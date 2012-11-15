@@ -15,15 +15,14 @@ public class TestSerpent
 		//test constructeur et toString
 		System.out.println(new Serpent());
 		
-		//test méthode getPos
-		int i = 0;
-		Position p = s.getElements(i);
+		//test méthode getTete
+		System.out.println("\nPosition de la tête : " + s.getTete());
 		
-		System.out.println("\nPosition de la case " + i + " " + p);
-		
-		System.out.println("\nPosition X : " + p.getX());
-		
-		System.out.println("\nPosition Y : " + p.getY());
-	
+		//test méthode getQueue
+		System.out.println("\nPosition de la Queue : " + s.getQueue());
+
+		//test getX et getY sur la queue
+		System.out.println("\nPosition X de la queue : " + s.getQueue().getX());
+		System.out.println("\nPosition Y de la queue : " + s.getQueue().getY());
 	}
 }

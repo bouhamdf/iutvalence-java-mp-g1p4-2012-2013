@@ -18,6 +18,7 @@ public class TestPlateau
 	 */
 	public static void main(String[] args)
 	{
-		System.out.print("BLA");
+		Plateau p = new Plateau();
+		System.out.print(p);
 	}
 }

@@ -13,22 +13,22 @@ public enum Direction
 	/**
 	 * représente la direction Haut
 	 */
-	UP, 
+	HAUT, 
 	
 	/**
 	 * représente la direction Droite
 	 */
-	RIGHT, 
+	DROITE, 
 	
 	/**
 	 * représente la direction Gauche
 	 */
-	LEFT, 
+	GAUCHE, 
 	
 	/**
 	 * représente la direction Bas
 	 */
-	DOWN
+	BAS;
 	
 	/*public final static int UP = 10, RIGHT = 20, LEFT = 30, DOWN = 40;*/
 

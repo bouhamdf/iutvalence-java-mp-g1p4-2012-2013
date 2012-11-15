@@ -53,12 +53,8 @@ public class Partie
 			Serpent s = this.crazySnake;
 			Plateau t = this.terrain;
 			Grenouille g = this.crazyFrog;
-			
-			s.avancer();	
+						
 			t.setSerpent(s);
-			
-			Position p = s.getElements(s.tailleSerpent-1);
-			t.setVide(p);
 			
 			System.out.println(t);
 			
