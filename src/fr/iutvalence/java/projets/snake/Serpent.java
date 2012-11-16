@@ -89,8 +89,7 @@ public class Serpent
 	public Position getQueue()
 	{
 		return this.positions.get(1);
-	}
-	
+	}	
 	
 	/**
 	 * Permet d'obtenir la position de la partie i du corps du serpent
@@ -100,6 +99,17 @@ public class Serpent
 	public Position getCorps(int i)
 	{
 		return this.positions.get(i);
+	}
+	
+	/**
+	 * Permet de redéfinir la position de la tête
+	 * @param x
+	 * @param y
+	 */
+	public void setTete(int x, int y)
+	{
+		Position pos = new Position(x,y);
+		this.positions.set(0, pos);
 	}
 	
 	/**
@@ -124,5 +134,11 @@ public class Serpent
 				return new Position(tete.getX()-1, tete.getY());
 		}
 		return null;
-	}		
+	}
+	
+	public void avancer()
+	{
+		this.positions.getCaseSuivante();
+	
+	}
 }

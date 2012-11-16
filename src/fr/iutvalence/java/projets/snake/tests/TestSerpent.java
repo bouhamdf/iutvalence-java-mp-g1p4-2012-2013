@@ -24,5 +24,9 @@ public class TestSerpent
 		//test getX et getY sur la queue
 		System.out.println("\nPosition X de la queue : " + s.getQueue().getX());
 		System.out.println("\nPosition Y de la queue : " + s.getQueue().getY());
+		
+		//test changement de la position de la tete du serpent
+		s.setTete(55,66);
+		System.out.println("\nChangement de la position de la tete : " + s);
 	}
 }
