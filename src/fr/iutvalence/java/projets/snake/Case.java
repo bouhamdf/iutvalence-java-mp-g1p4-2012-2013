@@ -48,12 +48,12 @@ public enum Case
 	}
 	   
 	
-	//FIXME le nom de la méthode est mal choisi !
+	//FIXME (FIXED) le nom de la méthode est mal choisi !
 	/**
 	 * Permet de récupérer le nom d'un élément de l'énumération
 	 * @return nomCase
 	 */
-	public int nomCase()
+	public int getNomCase()
 	{
 		return nomCase;
 	}
