@@ -51,13 +51,14 @@ public class Partie
 		for(int i = 0; i<20; i++)
 		{
 			Serpent s = this.crazySnake;
-			Plateau t = this.terrain;
+			Plateau p = this.terrain;
 			Grenouille g = this.crazyFrog;
 						
-			t.setSerpent(s);
 			
-			System.out.println(t);
-			
+			s.avancer();p.setSerpent(s);
+			p.setVide(s.getDernierElement());
+			System.out.println(p);
+	
 			try
 			{
 				Thread.sleep(1000);

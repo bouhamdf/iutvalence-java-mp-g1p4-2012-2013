@@ -26,7 +26,21 @@ public class TestSerpent
 		System.out.println("\nPosition Y de la queue : " + s.getQueue().getY());
 		
 		//test changement de la position de la tete du serpent
-		s.setTete(55,66);
+		//Position pos = new Position(55,77);
+		//s.setTete(pos);
 		System.out.println("\nChangement de la position de la tete : " + s);
+		
+		//test avancer()
+		System.out.println("Avancer");
+		Plateau p = new Plateau();
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("\nPosition de la Queue : " + s.getQueue());
+			s.avancer();System.out.println(s);
+			
+		}
+		
+		
+		
 	}
 }

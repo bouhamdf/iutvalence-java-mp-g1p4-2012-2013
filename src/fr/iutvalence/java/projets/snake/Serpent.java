@@ -33,6 +33,10 @@ public class Serpent
 	 */
 	private Direction direction;
 	
+	/**
+	 * Cette variable prendra la position de l'élement que l'on va supprimer (afin de mettre un 0 dans la grille)
+	 */
+	private Position dernierElement;
 	
 	/**
 	 * Constructeur Serpent
@@ -47,10 +51,10 @@ public class Serpent
 		this.positions = new LinkedList<Position>();
 		
 		this.positions.add(new Position(10,12)); //Premiere case : tete
-		this.positions.add(new Position(14,12)); //Deuxieme  case : queue
 		this.positions.add(new Position(11,12));
 		this.positions.add(new Position(12,12));
 		this.positions.add(new Position(13,12));
+		this.positions.add(new Position(14,12));
 		
 		//Direction initiale du serpent
 		this.direction = Direction.GAUCHE;
@@ -88,7 +92,7 @@ public class Serpent
 	 */
 	public Position getQueue()
 	{
-		return this.positions.get(1);
+		return this.positions.get(this.tailleSerpent-1);
 	}	
 	
 	/**
@@ -102,14 +106,23 @@ public class Serpent
 	}
 	
 	/**
+	 * Permet d'obtenir le dernier element
+	 * @return
+	 */
+	public Position getDernierElement()
+	{
+		return this.dernierElement;
+	}
+	
+	/**
 	 * Permet de redéfinir la position de la tête
 	 * @param x
 	 * @param y
 	 */
-	public void setTete(int x, int y)
+	public void setTete(Position pos)
 	{
-		Position pos = new Position(x,y);
-		this.positions.set(0, pos);
+		Position posTete = new Position(pos.getX(),pos.getY());
+		this.positions.set(0, posTete);
 	}
 	
 	/**
@@ -136,9 +149,13 @@ public class Serpent
 		return null;
 	}
 	
+	/**
+	 * Modifie la tete du serpent et supprime le dernier element
+	 */
 	public void avancer()
 	{
-		this.positions.getCaseSuivante();
-	
+		this.dernierElement = this.positions.getLast();
+		this.positions.addFirst(this.getCaseSuivante());
+		this.positions.removeLast();
 	}
 }

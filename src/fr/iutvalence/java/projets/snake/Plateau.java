@@ -81,7 +81,7 @@ public class Plateau
 		this.grille[xTete][yTete] = Case.TETE_SERPENT.nomCase();
 		
 			//Insertion Corps
-		for(int k = 1; k < taille; k++)
+		for(int k = 1; k < taille-1; k++)
 		{
 			int x = s.getCorps(k).getX(), y = s.getCorps(k).getY();
 			this.grille[x][y] = Case.CASE_SERPENT.nomCase();
@@ -109,6 +109,6 @@ public class Plateau
 	public void setVide(Position pos)
 	{
 		int x = pos.getX(), y = pos.getY();
-		this.grille[x][y+1] = Case.VIDE.nomCase();
+		this.grille[x][y] = Case.VIDE.nomCase();
 	}
 }
