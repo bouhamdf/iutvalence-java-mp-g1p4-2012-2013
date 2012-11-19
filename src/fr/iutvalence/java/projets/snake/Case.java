@@ -48,7 +48,7 @@ public enum Case
 	}
 	   
 	
-	//FIXME (FIXED) le nom de la méthode est mal choisi !
+	//FIXME (NOT FIXED) le nom de la méthode est mal choisi : ca ne renvoie pas un nom mais un numéro!
 	/**
 	 * Permet de récupérer le nom d'un élément de l'énumération
 	 * @return nomCase
