@@ -19,6 +19,9 @@ public class Plateau
 	 */
 	public final static int HAUTEUR = 25;		
 
+	
+	// FIXME revoir le commentaire (il n'y a plus de constantes
+	// FIXME changer le type des éléments du tableau (utiliser l'énumération)
 	/**
 	 * Représente la grille à deux dimensions du jeu Les cases contiennent les constantes définies au-dessus
 	 */
@@ -49,22 +52,6 @@ public class Plateau
 				this.grille[LARGEUR - 1][i] = Case.MUR.nomCase(); // On modélise le mur de du bas (la derniere colonn de la grille)
 			}
 		}			
-	}
-
-	@Override
-	public String toString()
-	{
-
-		String result = "";
-		for (int i = 0; i < HAUTEUR; i++)
-		{
-			for (int j = 0; j < LARGEUR; j++)
-			{
-				result = result + this.grille[j][i];
-			}
-			result = result + '\n';
-		}
-		return result;
 	}
 	
 	/**
@@ -102,6 +89,7 @@ public class Plateau
 		this.grille[g.getPosX()][g.getPosY()] = Case.GRENOUILLE.nomCase();
 	}
 	
+	// FIXME gérer les débordements avec une exception
 	/**
 	 * Met un zero dans la grille à la position donnée
 	 * @param pos
@@ -110,5 +98,24 @@ public class Plateau
 	{
 		int x = pos.getX(), y = pos.getY();
 		this.grille[x][y+1] = Case.VIDE.nomCase();
+	}
+	
+	/**
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString()
+	{
+
+		String result = "";
+		for (int i = 0; i < HAUTEUR; i++)
+		{
+			for (int j = 0; j < LARGEUR; j++)
+			{
+				result = result + this.grille[j][i];
+			}
+			result = result + '\n';
+		}
+		return result;
 	}
 }
