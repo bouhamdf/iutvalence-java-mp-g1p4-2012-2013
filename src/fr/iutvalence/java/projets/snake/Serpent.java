@@ -13,14 +13,13 @@ import java.util.LinkedList;
 public class Serpent
 
 {
-
-	// FIXME compléter
+	// FIXME (FIXED) compléter
 	/**
-	 * Représente la taille du serpent à un moment donné de la partie (Initialisé à 4)
-	 * Public car utilisé dans la classe Plateau
+	 * Représente la taille du serpent à un moment donné de la partie :
+	 * la taille augmente lorsque le serpent mange une grenouille
+	 * (Initialisé à 5)
 	 */
-	public int tailleSerpent;
-	
+	private int tailleSerpent;
 	
 	/**
 	 * Liste de Position : chaque case du tableau représente la position d'un éléments du serpent
@@ -115,6 +114,14 @@ public class Serpent
 	}
 	
 	/**
+	 * Permet d'obtenir la taille du serpent
+	 * @return
+	 */
+	public int getTailleSerpent()
+	{
+		return this.tailleSerpent;
+	}
+	/**
 	 * Permet de redéfinir la position de la tête
 	 * @param x
 	 * @param y
@@ -157,5 +164,13 @@ public class Serpent
 		this.dernierElement = this.positions.getLast();
 		this.positions.addFirst(this.getCaseSuivante());
 		this.positions.removeLast();
+	}
+	
+	/**
+	 * Méthode grandir : ajoute 1 à la taille du serpent, méthode appelée lorsque le serpent mange une grenouille
+	 */
+	public void grandir()
+	{
+		this.tailleSerpent = this.tailleSerpent+1;
 	}
 }

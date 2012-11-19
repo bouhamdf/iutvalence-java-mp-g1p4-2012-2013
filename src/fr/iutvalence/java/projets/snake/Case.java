@@ -34,28 +34,32 @@ public enum Case
 	 */
 	QUEUE_SERPENT(5);
 
-	private final int nomCase;
+	/**
+	 * Numéro de la case (4 pour CASE_SERPENT, 5 pour QUEUE_SERPENT...)
+	 */
+	private final int numCase;
 	
-	//FIXME Commenter
+	//FIXME (FIXED) Commenter
 	//Constructeur
 	/**
-	 * Constructeur Case
-	 * @param nomCase
+	 * Constructeur de Case : initialise la variable numCase à l'énumération correspondante
+	 * Ex : 4 pour QUEUE_SERPENT
+	 * @param numCase
 	 */
-	private Case(int nomCase)
+	private Case(int numCase)
 	{
-		this.nomCase = nomCase;
+		this.numCase = numCase;
 	}
 	   
 	
-	//FIXME (NOT FIXED) le nom de la méthode est mal choisi : ca ne renvoie pas un nom mais un numéro!
+	//FIXME (FIXED) le nom de la méthode est mal choisi : ca ne renvoie pas un nom mais un numéro!
 	/**
 	 * Permet de récupérer le nom d'un élément de l'énumération
 	 * @return nomCase
 	 */
-	public int getNomCase()
+	public int getNumCase()
 	{
-		return nomCase;
+		return numCase;
 	}
 }
 

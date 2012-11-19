@@ -23,11 +23,9 @@ public class TestGrenouille
 		Grenouille g = new Grenouille();
 		System.out.println(g);
 		
-		System.out.println("\nTest de getPosX : "+g.getPosX()+"\n");
+		System.out.println("\nTest de getPosition : "+g.getPosition()+"\n");
 		
-		System.out.println("Test de getPosY : "+g.getPosY()+"\n");
-		
-		g.setPos();
+		g.changerPosGrenouille();
 		System.out.println("Test de setPos : "+g+"\n");
 	}
 }

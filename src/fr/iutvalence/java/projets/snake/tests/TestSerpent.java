@@ -33,12 +33,17 @@ public class TestSerpent
 		//test avancer()
 		System.out.println("Avancer");
 		Plateau p = new Plateau();
-		for(int i=0;i<5;i++)
+		for(int i=0;i<3;i++)
 		{
 			System.out.println("\nPosition de la Queue : " + s.getQueue());
 			s.avancer();System.out.println(s);
 			
 		}
+		
+		//test grandir
+		System.out.println("\nTaille du serpent : " + s.getTailleSerpent());
+		s.grandir();
+		System.out.println("\nTaille du serpent : " + s.getTailleSerpent());
 		
 		
 		

@@ -24,10 +24,8 @@ public class Grenouille
 	 */
 	public Grenouille()
 	{
-		// FIXME (NOT FIXED ...) réécrire la même chose en une seule ligne en se passant des variables x et y
-		int x = randomGrenouille(), y = randomGrenouille();
-
-		this.position = new Position(x, y);
+		// FIXME (FIXED) réécrire la même chose en une seule ligne en se passant des variables x et y
+		this.position = new Position(randomGrenouille(), randomGrenouille());
 	}
 
 	
@@ -45,38 +43,23 @@ public class Grenouille
 	}
 
 	
-	// FIXME remplacer les 2 méthodes par une seule getPosition()
+	// FIXME (FIXED) remplacer les 2 méthodes par une seule getPosition()
 	/**
-	 * Méthode magique getPosX : Retourne l'abscisse d'une grenouille
-	 * 
-	 * @return x
+	 * Méthode getPosition : Retourne la position de la grenouille
+	 * @return position
 	 */
-	public int getPosX()
+	public Position getPosition()
 	{
-		int x = this.position.getX();
-		return x;
+		return this.position;
 	}
-
-	/**
-	 * Méthode magique getPosY : Retourne l'ordonnée d'une grenouille
-	 * 
-	 * @return y
-	 */
-	public int getPosY()
-	{
-		int y = this.position.getY();
-		return y;
-	}
-
 	
-	//FIXME le nom est mal choisi !
+	//FIXME (FIXED) le nom est mal choisi !
 	/**
 	 * Change la position de la grenouille (utile dans le cas ou elle est sur le serpent)
 	 */
-	public void setPos()
+	public void changerPosGrenouille()
 	{
-		int x = randomGrenouille(), y = randomGrenouille();
-		this.position = new Position(x, y);
+		this.position = new Position(randomGrenouille(), randomGrenouille());
 	}
 	
 	/**
