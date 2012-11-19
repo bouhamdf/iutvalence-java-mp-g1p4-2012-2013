@@ -40,7 +40,6 @@ public class Partie
 		this.crazyFrog = new Grenouille();
 	}
 	
-	// FIXME (FIXED) ajouter une méthode pour démarrer la partie
 	/**
 	 * Demarre une partie
 	 */

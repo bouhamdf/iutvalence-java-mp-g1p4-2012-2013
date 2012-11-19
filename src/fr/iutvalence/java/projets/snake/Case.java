@@ -42,11 +42,13 @@ public enum Case
 	 * Constructeur Case
 	 * @param nomCase
 	 */
-	Case(int nomCase)
+	private Case(int nomCase)
 	{
 		this.nomCase = nomCase;
 	}
 	   
+	
+	//FIXME le nom de la méthode est mal choisi !
 	/**
 	 * Permet de récupérer le nom d'un élément de l'énumération
 	 * @return nomCase

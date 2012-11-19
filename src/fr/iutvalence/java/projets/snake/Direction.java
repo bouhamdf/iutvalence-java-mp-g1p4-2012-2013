@@ -2,7 +2,7 @@ package fr.iutvalence.java.projets.snake;
 
 /**
  * 
- * Classe Direction : Sert à calculer la direction que prend le serpent
+ * Classe Direction : Sert à représenter la direction que prend le serpent
  * @author bouhamdf
  * @version 1 
  */
