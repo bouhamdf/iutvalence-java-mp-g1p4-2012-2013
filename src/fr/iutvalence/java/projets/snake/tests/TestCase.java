@@ -14,7 +14,11 @@ public class TestCase
 	 */
 	public static void main(final String[] args)
 	{		
-		String cases = "Case Vide : "+Case.VIDE.getNumCase()+"\nCase Mur : "+Case.MUR.getNumCase()+"\nCase Grenouille : "+Case.GRENOUILLE.getNumCase()+"\nCase Serpent : "+Case.CASE_SERPENT.getNumCase()+"\nCase Tête Serpent : "+Case.TETE_SERPENT.getNumCase()+"\nCase Queue Serpent : "+Case.QUEUE_SERPENT.getNumCase();
-		System.out.println(cases);
+		System.out.println("Case Vide : "+Case.VIDE);
+		System.out.println("Case Mur : "+Case.MUR);
+		System.out.println("Case Grenouille : "+Case.GRENOUILLE);
+		System.out.println("Case Serpent : "+Case.CASE_SERPENT);
+		System.out.println("Case Tete Serpent : "+Case.TETE_SERPENT);
+		System.out.println("Case Queue Serpent : "+Case.QUEUE_SERPENT);
 	}
 }

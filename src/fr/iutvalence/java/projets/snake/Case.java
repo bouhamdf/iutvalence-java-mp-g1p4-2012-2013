@@ -51,15 +51,12 @@ public enum Case
 		this.numCase = numCase;
 	}
 	   
-	
-	//FIXME (FIXED) le nom de la méthode est mal choisi : ca ne renvoie pas un nom mais un numéro!
-	/**
-	 * Permet de récupérer le nom d'un élément de l'énumération
-	 * @return nomCase
-	 */
-	public int getNumCase()
+	@Override
+	public String toString()
 	{
-		return numCase;
+		return ""+this.numCase;
 	}
+	
+	
 }
 

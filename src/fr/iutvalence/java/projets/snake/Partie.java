@@ -53,7 +53,6 @@ public class Partie
 			Plateau p = this.terrain;
 			Grenouille g = this.crazyFrog;
 						
-			
 			s.avancer();p.setSerpent(s);
 			p.setVide(s.getDernierElement());
 			System.out.println(p);
