@@ -1,5 +1,6 @@
 package fr.iutvalence.java.projets.snake;
 import java.util.LinkedList;
+import java.util.Random;
 import java.awt.event.KeyEvent;
 
 /**
@@ -138,20 +139,19 @@ public class Serpent
 	 */
 	public Position getCaseSuivante()
 	{
-		Position tete = this.getTete();
-		switch (this.direction)
+		switch(this.direction)
 		{
 			case HAUT:
-				return new Position(tete.getX(), tete.getY()-1);
+				return new Position(this.getTete().getX(), this.getTete().getY()-1);
 			
 			case DROITE:
-				return new Position(tete.getX()+1, tete.getY());
+				return new Position(this.getTete().getX()+1, this.getTete().getY());
 				
 			case BAS:
-				return new Position(tete.getX(), tete.getY()+1);
+				return new Position(this.getTete().getX(), this.getTete().getY()+1);
 				
 			case GAUCHE:
-				return new Position(tete.getX()-1, tete.getY());
+				return new Position(this.getTete().getX()-1, this.getTete().getY());
 		}
 		return null;
 	}
@@ -162,8 +162,30 @@ public class Serpent
 	public void avancer()
 	{
 		this.dernierElement = this.positions.getLast();
-		this.positions.addFirst(this.getCaseSuivante());
+		this.positions.addFirst(this.avancerAleatoirement());
 		this.positions.removeLast();
+	}
+	
+	/**
+	 * Méthode provisoire : le serpent avance aléatoirement
+	 */
+	public Position avancerAleatoirement()
+	{
+		Random rand = new Random(); // constructeur
+		int i = rand.nextInt(3); // génération
+		
+		switch(i)
+		{
+			case 0:
+				return new Position(this.getTete().getX(), this.getTete().getY()-1);
+			
+			case 1:
+				return new Position(this.getTete().getX()+1, this.getTete().getY());
+				
+			case 2:
+				return new Position(this.getTete().getX()-1, this.getTete().getY());
+		}
+		return null;
 	}
 	
 	/**

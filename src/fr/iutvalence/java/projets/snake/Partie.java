@@ -47,20 +47,18 @@ public class Partie
 	{		
 		this.terrain.setGrenouille(this.grenouille);
 		
-		for(int i = 0; i<20; i++)
-		{
-			Serpent s = this.serpent;
-			Plateau p = this.terrain;
-			Grenouille g = this.grenouille;
+		while(perdu()!= true)
+		{			
+			this.serpent.avancerAleatoirement();
+			this.serpent.avancer();//serpent avance
 			
-			s.avancer();//serpent avance
 			if(perdu())//serpent touche mur, se mord
 			{
 				System.out.println("GAME OVER");break;
 			}
-			p.setSerpent(s);//insère serpent
-			p.setVide(s.getDernierElement());//insère un 0
-			System.out.println(p);//affiche le plateau
+			this.terrain.setSerpent(this.serpent);//insère serpent
+			this.terrain.setVide(this.serpent.getDernierElement());//insère un 0
+			System.out.println(this.terrain);//affiche le plateau
 	
 			try
 			{

@@ -1,6 +1,5 @@
 package fr.iutvalence.java.projets.snake.tests;
 
-import java.util.Random;
 import fr.iutvalence.java.projets.snake.*;
 
 /**
