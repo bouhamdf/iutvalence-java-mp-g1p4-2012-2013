@@ -1,6 +1,6 @@
 package fr.iutvalence.java.projets.snake;
 import java.util.LinkedList;
-
+import java.awt.event.KeyEvent;
 
 /**
  * Classe Serpent : Dans cette Classe nous allons gérer le déplacement du serpent et nous allons générer 

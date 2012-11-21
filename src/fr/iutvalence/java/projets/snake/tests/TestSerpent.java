@@ -13,7 +13,7 @@ public class TestSerpent
 		Serpent s = new Serpent();
 		
 		//test constructeur et toString
-		System.out.println(new Serpent());
+		System.out.println(s);
 		
 		//test méthode getTete
 		System.out.println("\nPosition de la tête : " + s.getTete());
@@ -43,9 +43,6 @@ public class TestSerpent
 		//test grandir
 		System.out.println("\nTaille du serpent : " + s.getTailleSerpent());
 		s.grandir();
-		System.out.println("\nTaille du serpent : " + s.getTailleSerpent());
-		
-		
-		
+		System.out.println("\nTaille du serpent : " + s.getTailleSerpent()+"\n");		
 	}
 }

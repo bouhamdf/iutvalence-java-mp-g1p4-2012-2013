@@ -19,13 +19,13 @@ public class Partie
 	/**
 	 *  le serpent du jeu
 	 */
-	private Serpent crazySnake;
+	private Serpent serpent;
 
 
 	/**
 	 *  la (les) grenouille(s)
 	 */
-	private Grenouille crazyFrog;
+	private Grenouille grenouille;
 
 	// constructeur
 	/**
@@ -36,8 +36,8 @@ public class Partie
 	public Partie()
 	{
 		this.terrain = new Plateau();
-		this.crazySnake = new Serpent();
-		this.crazyFrog = new Grenouille();
+		this.serpent = new Serpent();
+		this.grenouille = new Grenouille();
 	}
 	
 	/**
@@ -45,17 +45,22 @@ public class Partie
 	 */
 	public void demarrer()
 	{		
-		this.terrain.setGrenouille(this.crazyFrog);
+		this.terrain.setGrenouille(this.grenouille);
 		
 		for(int i = 0; i<20; i++)
 		{
-			Serpent s = this.crazySnake;
+			Serpent s = this.serpent;
 			Plateau p = this.terrain;
-			Grenouille g = this.crazyFrog;
-						
-			s.avancer();p.setSerpent(s);
-			p.setVide(s.getDernierElement());
-			System.out.println(p);
+			Grenouille g = this.grenouille;
+			
+			s.avancer();//serpent avance
+			if(perdu())//serpent touche mur, se mord
+			{
+				System.out.println("GAME OVER");break;
+			}
+			p.setSerpent(s);//insère serpent
+			p.setVide(s.getDernierElement());//insère un 0
+			System.out.println(p);//affiche le plateau
 	
 			try
 			{
@@ -67,5 +72,32 @@ public class Partie
 			}
 		}
 	}
+	
+	/**
+	 * Méthode qui renvoie true Si le serpent touche le mur ou bien un de ses éléments
+	 * @return true/false
+	 */
+	public boolean perdu()
+	{
+		Position tete = this.serpent.getTete();
+		//Touche un mur
+		if(tete.getX()==0 || tete.getX()==this.terrain.LARGEUR || tete.getX()==0 || tete.getX()==this.terrain.HAUTEUR)
+		{
+			return true;
+		}
+		
+		//Touche un élément de serpent
+		for(int i=1;i<this.serpent.getTailleSerpent()-1;i++)
+		{
+			if(this.serpent.getCorps(i)== tete)
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	
 	
 }

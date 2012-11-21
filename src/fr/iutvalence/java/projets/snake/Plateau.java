@@ -98,7 +98,7 @@ public class Plateau
 	 * Met un zero dans la grille à la position donnée
 	 * @param pos
 	 */
-	public void setVide(Position pos) throws PersonnaliserException
+	public void setVide(Position pos)
 	{
 		int x = pos.getX(), y = pos.getY();
 		this.grille[x][y] = Case.VIDE;
