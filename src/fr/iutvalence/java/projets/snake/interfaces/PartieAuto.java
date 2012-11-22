@@ -1,12 +1,17 @@
-package fr.iutvalence.java.projets.snake;
+package fr.iutvalence.java.projets.snake.interfaces;
+
+import fr.iutvalence.java.projets.snake.Grenouille;
+import fr.iutvalence.java.projets.snake.Plateau;
+import fr.iutvalence.java.projets.snake.Position;
+import fr.iutvalence.java.projets.snake.Serpent;
 
 /**
- * Partie : Contient toutes les éléments liés à une Partie
+ * PartieAuto : Contient toutes les éléments liés à une Partie, le serpent avance automatiquement
  * @author bouhamdf
  * @version 1 Classe 
  */
 
-public class Partie
+public class PartieAuto
 {
 
 	// attributs
@@ -33,7 +38,7 @@ public class Partie
 	 * Partie : Iniatialise un nouveau Plateau, un Serpent et une Grenouille
 	 * @param: aucun
 	 */
-	public Partie()
+	public PartieAuto()
 	{
 		this.terrain = new Plateau();
 		this.serpent = new Serpent();
@@ -49,7 +54,8 @@ public class Partie
 		
 		while(perdu()!= true)
 		{			
-			this.serpent.avancer();//serpent avance
+			this.serpent.avancerAleatoirement();
+			this.serpent.avancerAuto();//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
 			{
