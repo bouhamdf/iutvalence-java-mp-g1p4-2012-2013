@@ -1,7 +1,6 @@
 package fr.iutvalence.java.projets.snake;
 import java.util.LinkedList;
 import java.util.Random;
-import java.awt.event.KeyEvent;
 
 /**
  * Classe Serpent : Dans cette Classe nous allons gérer le déplacement du serpent et nous allons générer 
@@ -14,7 +13,6 @@ import java.awt.event.KeyEvent;
 public class Serpent
 
 {
-	// FIXME (FIXED) compléter
 	/**
 	 * Représente la taille du serpent à un moment donné de la partie :
 	 * la taille augmente lorsque le serpent mange une grenouille

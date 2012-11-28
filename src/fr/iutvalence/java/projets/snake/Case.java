@@ -1,6 +1,4 @@
 package fr.iutvalence.java.projets.snake;
-import fr.iutvalence.java.projets.snake.*;
-import java.lang.Enum;
 
 public enum Case
 {
@@ -39,8 +37,6 @@ public enum Case
 	 */
 	private final int numCase;
 	
-	//FIXME (FIXED) Commenter
-	//Constructeur
 	/**
 	 * Constructeur de Case : initialise la variable numCase à l'énumération correspondante
 	 * Ex : 4 pour QUEUE_SERPENT
@@ -51,6 +47,7 @@ public enum Case
 		this.numCase = numCase;
 	}
 	   
+	// FIXME si l'attribut sert juste dans toString, il faudrait mieux faire un switch case et renvoyer directement une valeur
 	@Override
 	public String toString()
 	{

@@ -1,5 +1,4 @@
 package fr.iutvalence.java.projets.snake;
-import fr.iutvalence.java.projets.snake.*;
 /**
  * Classe Plateau : Défini tous les éléments du plateau (taille et contenu des cases)
  * 
@@ -20,8 +19,6 @@ public class Plateau
 	public final static int HAUTEUR = 25;		
 
 	
-	// FIXME (FIXED) revoir le commentaire (il n'y a plus de constantes
-	// FIXME (FIXED) changer le type des éléments du tableau (utiliser l'énumération)
 	/**
 	 * Représente la grille à deux dimensions du jeu.
 	 * Les cases contiennent les valeurs de l'énumération définies dans la classe Case

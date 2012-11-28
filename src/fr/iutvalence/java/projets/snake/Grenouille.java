@@ -24,12 +24,12 @@ public class Grenouille
 	 */
 	public Grenouille()
 	{
-		// FIXME (FIXED) réécrire la même chose en une seule ligne en se passant des variables x et y
+
 		this.position = new Position(randomGrenouille(), randomGrenouille());
 	}
 
 	
-
+	// FIXME modifer la méthode pour qu'elle renvoie directement une position 
 	/**
 	 * position (aléatoire) de la grenouille retourne un nombre au hasard entre 0 et LARGEUR (Taille max de la grille)
 	 * 
@@ -43,7 +43,6 @@ public class Grenouille
 	}
 
 	
-	// FIXME (FIXED) remplacer les 2 méthodes par une seule getPosition()
 	/**
 	 * Méthode getPosition : Retourne la position de la grenouille
 	 * @return position
@@ -53,7 +52,6 @@ public class Grenouille
 		return this.position;
 	}
 	
-	//FIXME (FIXED) le nom est mal choisi !
 	/**
 	 * Change la position de la grenouille (utile dans le cas ou elle est sur le serpent)
 	 */
