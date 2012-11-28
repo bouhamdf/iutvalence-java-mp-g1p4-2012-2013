@@ -157,7 +157,7 @@ public class Serpent
 	/**
 	 * Modifie la tete du serpent et supprime le dernier element
 	 */
-	public void avancer()
+	public void avancerSerpent()
 	{
 		this.dernierElement = this.positions.getLast();
 		this.positions.addFirst(this.getCaseSuivante());
@@ -165,32 +165,26 @@ public class Serpent
 	}
 	
 	/**
-	 * Modifie la tete du serpent et supprime le dernier element
+	 * Méthode provisoire : renvoie la prochaine direction du serpent
+	 * @return direction
 	 */
-	public void avancerAuto()
-	{
-		this.dernierElement = this.positions.getLast();
-		this.positions.addFirst(this.avancerAleatoirement());
-		this.positions.removeLast();
-	}
-	
-	/**
-	 * Méthode provisoire : le serpent avance aléatoirement
-	 */
-	public Position avancerAleatoirement()
+	public Direction choixDirection()
 	{
 		Random rand = new Random(); // constructeur
 		int i = rand.nextInt(3); // génération
 			switch(i)
 			{
 				case 0:
-					return new Position(this.getTete().getX(), this.getTete().getY()-1);
+					return Direction.HAUT;
 				
 				case 1:
-					return new Position(this.getTete().getX()+1, this.getTete().getY());
+					return Direction.DROITE;
 					
 				case 2:
-					return new Position(this.getTete().getX()-1, this.getTete().getY());
+					return Direction.BAS;
+					
+				case 3:
+					return Direction.GAUCHE;
 			}
 		return null;
 	}

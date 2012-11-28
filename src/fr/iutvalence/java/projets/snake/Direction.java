@@ -30,6 +30,25 @@ public enum Direction
 	 */
 	BAS;
 	
-	/*public final static int UP = 10, RIGHT = 20, LEFT = 30, DOWN = 40;*/
+	/**
+	 * Méthode estInverse : renvoie vrai si la direction est l'inverse de la direction du serpent
+	 * @param choixdir 
+	 * @param choixSerp 
+	 * @return
+	 */
+	public Boolean estInverse(Direction choixdir, Direction choixSerp)
+	{
+		if(choixdir == Direction.HAUT && choixSerp == Direction.BAS
+			|| choixdir == Direction.BAS && choixSerp == Direction.HAUT
+			|| choixdir == Direction.DROITE && choixSerp == Direction.GAUCHE
+			|| choixdir == Direction.GAUCHE && choixSerp == Direction.DROITE)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 
+	}
 }

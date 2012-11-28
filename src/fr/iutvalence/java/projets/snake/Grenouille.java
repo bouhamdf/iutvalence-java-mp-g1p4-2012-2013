@@ -25,21 +25,19 @@ public class Grenouille
 	public Grenouille()
 	{
 
-		this.position = new Position(randomGrenouille(), randomGrenouille());
+		this.position = randomGrenouille();
 	}
 
 	
-	// FIXME modifer la méthode pour qu'elle renvoie directement une position 
+	// FIXME (FIXED) modifier la méthode pour qu'elle renvoie directement une position 
 	/**
 	 * position (aléatoire) de la grenouille retourne un nombre au hasard entre 0 et LARGEUR (Taille max de la grille)
-	 * 
-	 * @return i
+	 * @return pos
 	 */
-	private int randomGrenouille()
+	private Position randomGrenouille()
 	{
 		Random rand = new Random(); // constructeur
-		int i = rand.nextInt(Plateau.LARGEUR - 2) + 1; // génération
-		return i;
+		return new Position(rand.nextInt(Plateau.LARGEUR - 2) + 1, rand.nextInt(Plateau.LARGEUR - 2) + 1);
 	}
 
 	
@@ -57,7 +55,7 @@ public class Grenouille
 	 */
 	public void changerPosGrenouille()
 	{
-		this.position = new Position(randomGrenouille(), randomGrenouille());
+		this.position = randomGrenouille();
 	}
 	
 	/**

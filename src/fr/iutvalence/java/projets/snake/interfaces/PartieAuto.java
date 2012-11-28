@@ -1,6 +1,7 @@
 package fr.iutvalence.java.projets.snake.interfaces;
 
 import fr.iutvalence.java.projets.snake.Grenouille;
+import fr.iutvalence.java.projets.snake.PersonnaliserException;
 import fr.iutvalence.java.projets.snake.Plateau;
 import fr.iutvalence.java.projets.snake.Position;
 import fr.iutvalence.java.projets.snake.Serpent;
@@ -43,6 +44,7 @@ public class PartieAuto
 		this.terrain = new Plateau();
 		this.serpent = new Serpent();
 		this.grenouille = new Grenouille();
+		this.terrain.setGrenouille(this.grenouille);
 	}
 	
 	/**
@@ -50,19 +52,24 @@ public class PartieAuto
 	 */
 	public void demarrer()
 	{		
-		this.terrain.setGrenouille(this.grenouille);
-		
-		while(perdu()!= true)
+		while(!perdu())
 		{			
-			this.serpent.avancerAleatoirement();
-			this.serpent.avancerAuto();//serpent avance
+			//this.serpent.avancerAleatoirement();
+			this.serpent.avancerSerpent();//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
 			{
 				System.out.println("GAME OVER");break;
 			}
 			this.terrain.setSerpent(this.serpent);//insère serpent
-			this.terrain.setVide(this.serpent.getDernierElement());//insère un 0
+			try
+			{
+				this.terrain.setVide(this.serpent.getDernierElement());
+			}
+			catch (PersonnaliserException e1)
+			{
+				// ca ne peut pas arriver
+			}//insère un 0
 			System.out.println(this.terrain);//affiche le plateau
 	
 			try

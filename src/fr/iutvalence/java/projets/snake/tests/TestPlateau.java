@@ -15,10 +15,18 @@ public class TestPlateau
 	/**
 	 * méthode simulant le plateau de jeu
 	 * @param args
+	 * @throws PersonnaliserException 
 	 */
-	public static void main(String[] args)
+	public static void main(String[] args) throws PersonnaliserException
 	{
 		Plateau p = new Plateau();
 		System.out.print(p);
+		
+		try
+		{
+			Position pos = new Position (-2,9);
+			p.setVide(pos);
+		}
+		catch(PersonnaliserException e){}
 	}
 }

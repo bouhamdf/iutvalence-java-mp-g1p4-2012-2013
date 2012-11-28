@@ -11,8 +11,10 @@ public class TestPartieAuto
 	 */
 	public static void main(String[] args)
 	{
-		PartieAuto p = new PartieAuto();
-		p.demarrer();
+
+			PartieAuto p = new PartieAuto();
+			p.demarrer();
+
 	}
 
 }

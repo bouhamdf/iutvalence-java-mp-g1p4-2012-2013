@@ -1,7 +1,12 @@
 package fr.iutvalence.java.projets.snake;
+import fr.iutvalence.java.projets.snake.Grenouille;
+import fr.iutvalence.java.projets.snake.PersonnaliserException;
+import fr.iutvalence.java.projets.snake.Plateau;
+import fr.iutvalence.java.projets.snake.Position;
+import fr.iutvalence.java.projets.snake.Serpent;
 
 /**
- * Partie : Contient toutes les éléments liés à une Partie
+ * PartieAuto : Contient toutes les éléments liés à une Partie, le serpent avance automatiquement
  * @author bouhamdf
  * @version 1 Classe 
  */
@@ -38,6 +43,7 @@ public class Partie
 		this.terrain = new Plateau();
 		this.serpent = new Serpent();
 		this.grenouille = new Grenouille();
+		this.terrain.setGrenouille(this.grenouille);
 	}
 	
 	/**
@@ -45,18 +51,23 @@ public class Partie
 	 */
 	public void demarrer()
 	{		
-		this.terrain.setGrenouille(this.grenouille);
-		
-		while(perdu()!= true)
-		{			
-			this.serpent.avancer();//serpent avance
+		while(!perdu())
+		{					
+			this.serpent.avancerSerpent();//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
 			{
 				System.out.println("GAME OVER");break;
 			}
 			this.terrain.setSerpent(this.serpent);//insère serpent
-			this.terrain.setVide(this.serpent.getDernierElement());//insère un 0
+			try
+			{
+				this.terrain.setVide(this.serpent.getDernierElement());
+			}
+			catch (PersonnaliserException e1)
+			{
+				// ca ne peut pas arriver
+			}//insère un 0
 			System.out.println(this.terrain);//affiche le plateau
 	
 			try

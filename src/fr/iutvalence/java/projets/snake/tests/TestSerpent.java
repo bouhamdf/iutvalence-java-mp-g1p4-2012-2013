@@ -36,7 +36,7 @@ public class TestSerpent
 		for(int i=0;i<3;i++)
 		{
 			System.out.println("\nPosition de la Queue : " + s.getQueue());
-			s.avancer();System.out.println(s);
+			s.avancerSerpent();System.out.println(s);
 			
 		}
 		

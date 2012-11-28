@@ -1,4 +1,5 @@
 package fr.iutvalence.java.projets.snake;
+import fr.iutvalence.java.projets.snake.*;
 /**
  * Classe Plateau : Défini tous les éléments du plateau (taille et contenu des cases)
  * 
@@ -90,15 +91,21 @@ public class Plateau
 		this.grille[g.getPosition().getX()][g.getPosition().getY()] = Case.GRENOUILLE;
 	}
 	
-	// FIXME gérer les débordements avec une exception
+	// FIXME (FIXED) gérer les débordements avec une exception
 	/**
 	 * Met un zero dans la grille à la position donnée
 	 * @param pos
+	 * @throws PersonnaliserException 
 	 */
-	public void setVide(Position pos)
+	public void setVide(Position pos) throws PersonnaliserException
 	{
-		int x = pos.getX(), y = pos.getY();
-		this.grille[x][y] = Case.VIDE;
+		if(0<pos.getX() && pos.getX()<LARGEUR && 0<pos.getY() && pos.getY()<HAUTEUR)
+		{
+			int x = pos.getX(), y = pos.getY();
+			this.grille[x][y] = Case.VIDE;
+		}
+		else
+			throw new PersonnaliserException();
 	}
 	
 	/**
