@@ -36,19 +36,12 @@ public enum Direction
 	 * @param choixSerp 
 	 * @return
 	 */
-	public Boolean estInverse(Direction choixdir, Direction choixSerp)
+	public boolean estInverse(Direction choixdir, Direction choixSerp)
 	{
-		if(choixdir == Direction.HAUT && choixSerp == Direction.BAS
+		return (choixdir == Direction.HAUT && choixSerp == Direction.BAS
 			|| choixdir == Direction.BAS && choixSerp == Direction.HAUT
 			|| choixdir == Direction.DROITE && choixSerp == Direction.GAUCHE
-			|| choixdir == Direction.GAUCHE && choixSerp == Direction.DROITE)
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+			|| choixdir == Direction.GAUCHE && choixSerp == Direction.DROITE);
 
 	}
 }
