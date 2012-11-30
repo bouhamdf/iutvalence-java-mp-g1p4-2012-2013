@@ -1,4 +1,5 @@
 package fr.iutvalence.java.projets.snake;
+import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -10,7 +11,7 @@ import java.util.Random;
  * @version 1
  */
 
-public class Serpent
+public class Serpent implements Clavier
 
 {
 	/**
@@ -120,6 +121,25 @@ public class Serpent
 	{
 		return this.tailleSerpent;
 	}
+	
+	/**
+	 * Permet d'obtenir la direction du serpent
+	 * @return
+	 */
+	public Direction getDirection()
+	{
+		return this.direction;
+	}
+	
+	/**
+	 * Permet de modifier la direction du serpent
+	 * @param dir 
+	 */
+	public void setDirection(Direction dir)
+	{
+		this.direction = dir;
+	}
+	
 	/**
 	 * Permet de redéfinir la position de la tête
 	 * @param x
@@ -195,5 +215,39 @@ public class Serpent
 	public void grandir()
 	{
 		this.tailleSerpent = this.tailleSerpent+1;
+		this.positions.addLast(this.getCaseSuivante());
+	}
+	
+	/**
+	 * Méthode manger : vérifie si le serpent a mangé la grenouille
+	 * @param posGrenouille 
+	 */
+	public void manger(Position posGrenouille)
+	{
+		if(this.getTete().getX() == posGrenouille.getX() && this.getTete().getY() == posGrenouille.getY())
+		{
+			grandir();
+		}
+	}
+
+	@Override
+	public void clavierDir(KeyEvent event)
+	{
+		if (event.getKeyCode() == KeyEvent.VK_RIGHT)
+		{
+			this.direction = Direction.DROITE;
+        }
+		else if (event.getKeyCode() == KeyEvent.VK_LEFT)
+		{
+			this.direction = Direction.GAUCHE;
+        }
+		else if (event.getKeyCode() == KeyEvent.VK_UP)
+		{
+			this.direction = Direction.HAUT;
+        }
+		else if (event.getKeyCode() == KeyEvent.VK_DOWN)
+		{
+			this.direction = Direction.BAS;
+        }
 	}
 }

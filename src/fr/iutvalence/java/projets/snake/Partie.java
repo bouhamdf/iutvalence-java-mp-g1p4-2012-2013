@@ -51,8 +51,18 @@ public class Partie
 	 */
 	public void demarrer()
 	{		
+		//Tant que la partie n'est pas perdu en continue
 		while(!perdu())
-		{					
+		{	
+			Direction choixDir = this.serpent.choixDirection();
+			//Tq la direction choisie est l'inverse de celle du serpent, on continue de choisir une direction
+			while(this.serpent.getDirection().estInverse(choixDir, this.serpent.getDirection()))
+			{
+				choixDir = this.serpent.choixDirection();
+			}
+			
+			//On change la direction du serpent avec la nouvelle direction
+			this.serpent.setDirection(choixDir);
 			this.serpent.avancerSerpent();//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
@@ -89,7 +99,7 @@ public class Partie
 	{
 		Position tete = this.serpent.getTete();
 		//Touche un mur
-		if(tete.getX()==0 || tete.getX()==this.terrain.LARGEUR || tete.getY()==0 || tete.getY()==this.terrain.HAUTEUR)
+		if(tete.getX()==0 || tete.getX()==this.terrain.LARGEUR-1 || tete.getY()==0 || tete.getY()==this.terrain.HAUTEUR-1)
 		{
 			return true;
 		}
