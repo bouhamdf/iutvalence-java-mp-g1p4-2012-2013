@@ -1,7 +1,7 @@
 package fr.iutvalence.java.projets.snake;
-import java.awt.event.KeyEvent;
 import java.util.LinkedList;
 import java.util.Random;
+
 
 /**
  * Classe Serpent : Dans cette Classe nous allons gérer le déplacement du serpent et nous allons générer 
@@ -11,8 +11,7 @@ import java.util.Random;
  * @version 1
  */
 
-public class Serpent implements Clavier
-
+public class Serpent
 {
 	/**
 	 * Représente la taille du serpent à un moment donné de la partie :
@@ -221,33 +220,10 @@ public class Serpent implements Clavier
 	/**
 	 * Méthode manger : vérifie si le serpent a mangé la grenouille
 	 * @param posGrenouille 
+	 * @return 
 	 */
-	public void manger(Position posGrenouille)
+	public boolean manger(Position posGrenouille)
 	{
-		if(this.getTete().getX() == posGrenouille.getX() && this.getTete().getY() == posGrenouille.getY())
-		{
-			grandir();
-		}
-	}
-
-	@Override
-	public void clavierDir(KeyEvent event)
-	{
-		if (event.getKeyCode() == KeyEvent.VK_RIGHT)
-		{
-			this.direction = Direction.DROITE;
-        }
-		else if (event.getKeyCode() == KeyEvent.VK_LEFT)
-		{
-			this.direction = Direction.GAUCHE;
-        }
-		else if (event.getKeyCode() == KeyEvent.VK_UP)
-		{
-			this.direction = Direction.HAUT;
-        }
-		else if (event.getKeyCode() == KeyEvent.VK_DOWN)
-		{
-			this.direction = Direction.BAS;
-        }
+		return (this.getTete().getX() == posGrenouille.getX() && this.getTete().getY() == posGrenouille.getY());
 	}
 }

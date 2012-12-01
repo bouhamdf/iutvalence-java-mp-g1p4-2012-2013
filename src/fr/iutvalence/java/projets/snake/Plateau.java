@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+import java.awt.Graphics;
+
 import fr.iutvalence.java.projets.snake.*;
 /**
  * Classe Plateau : Défini tous les éléments du plateau (taille et contenu des cases)

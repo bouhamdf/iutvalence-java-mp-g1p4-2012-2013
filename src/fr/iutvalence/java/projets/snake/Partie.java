@@ -1,4 +1,6 @@
 package fr.iutvalence.java.projets.snake;
+import java.awt.Graphics;
+
 import fr.iutvalence.java.projets.snake.Grenouille;
 import fr.iutvalence.java.projets.snake.PersonnaliserException;
 import fr.iutvalence.java.projets.snake.Plateau;
@@ -13,7 +15,6 @@ import fr.iutvalence.java.projets.snake.Serpent;
 
 public class Partie
 {
-
 	// attributs
 
 	/**
@@ -43,7 +44,9 @@ public class Partie
 		this.terrain = new Plateau();
 		this.serpent = new Serpent();
 		this.grenouille = new Grenouille();
-		this.terrain.setGrenouille(this.grenouille);
+		
+		this.grenouille.verifPosGrenouille(this.serpent); //On vérifie la position de la grenouille 
+		this.terrain.setGrenouille(this.grenouille); //Insertion de la grenouille dans le plateau
 	}
 	
 	/**
@@ -54,30 +57,41 @@ public class Partie
 		//Tant que la partie n'est pas perdu en continue
 		while(!perdu())
 		{	
-			Direction choixDir = this.serpent.choixDirection();
+			//On verifie si le serpent a mangé la grenouille
+			if(this.serpent.manger(this.grenouille.getPosition()))
+			{
+				this.serpent.grandir();
+				this.grenouille = new Grenouille();
+				this.terrain.setGrenouille(this.grenouille); //Insertion de la nouvelle grenouille dans le plateau
+			}
+			
+			Direction choixDir = this.serpent.choixDirection(); //On met la direction choisie dans une variable
+			
 			//Tq la direction choisie est l'inverse de celle du serpent, on continue de choisir une direction
 			while(this.serpent.getDirection().estInverse(choixDir, this.serpent.getDirection()))
 			{
 				choixDir = this.serpent.choixDirection();
 			}
 			
-			//On change la direction du serpent avec la nouvelle direction
-			this.serpent.setDirection(choixDir);
-			this.serpent.avancerSerpent();//serpent avance
+			this.serpent.setDirection(choixDir);	//On change la direction du serpent avec la nouvelle direction
+			this.serpent.avancerSerpent();	//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
 			{
 				System.out.println("GAME OVER");break;
 			}
-			this.terrain.setSerpent(this.serpent);//insère serpent
+			
+			this.terrain.setSerpent(this.serpent);//insertion du serpent dans la grille
+			
 			try
 			{
-				this.terrain.setVide(this.serpent.getDernierElement());
+				this.terrain.setVide(this.serpent.getDernierElement()); //insère un 0
 			}
 			catch (PersonnaliserException e1)
 			{
 				// ca ne peut pas arriver
-			}//insère un 0
+			}
+			
 			System.out.println(this.terrain);//affiche le plateau
 	
 			try
@@ -114,8 +128,5 @@ public class Partie
 		}
 		
 		return false;
-	}
-	
-	
-	
+	}	
 }

@@ -1,4 +1,5 @@
-package fr.iutvalence.java.projets.snake.interfaces;
+package fr.iutvalence.java.projets.snake;
+import java.awt.Graphics;
 
 import fr.iutvalence.java.projets.snake.Grenouille;
 import fr.iutvalence.java.projets.snake.PersonnaliserException;
@@ -12,9 +13,8 @@ import fr.iutvalence.java.projets.snake.Serpent;
  * @version 1 Classe 
  */
 
-public class PartieAuto
+public class Jeu
 {
-
 	// attributs
 
 	/**
@@ -39,12 +39,14 @@ public class PartieAuto
 	 * Partie : Iniatialise un nouveau Plateau, un Serpent et une Grenouille
 	 * @param: aucun
 	 */
-	public PartieAuto()
+	public Jeu()
 	{
 		this.terrain = new Plateau();
 		this.serpent = new Serpent();
 		this.grenouille = new Grenouille();
-		this.terrain.setGrenouille(this.grenouille);
+		
+		this.grenouille.verifPosGrenouille(this.serpent); //On vérifie la position de la grenouille 
+		this.terrain.setGrenouille(this.grenouille); //Insertion de la grenouille dans le plateau
 	}
 	
 	/**
@@ -52,24 +54,44 @@ public class PartieAuto
 	 */
 	public void demarrer()
 	{		
+		//Tant que la partie n'est pas perdu en continue
 		while(!perdu())
-		{			
-			//this.serpent.avancerAleatoirement();
-			this.serpent.avancerSerpent();//serpent avance
+		{	
+			//On verifie si le serpent a mangé la grenouille
+			if(this.serpent.manger(this.grenouille.getPosition()))
+			{
+				this.serpent.grandir();
+				this.grenouille = new Grenouille();
+				this.terrain.setGrenouille(this.grenouille); //Insertion de la nouvelle grenouille dans le plateau
+			}
+			
+			Direction choixDir = this.serpent.choixDirection(); //On met la direction choisie dans une variable
+			
+			//Tq la direction choisie est l'inverse de celle du serpent, on continue de choisir une direction
+			while(this.serpent.getDirection().estInverse(choixDir, this.serpent.getDirection()))
+			{
+				choixDir = this.serpent.choixDirection();
+			}
+			
+			this.serpent.setDirection(choixDir);	//On change la direction du serpent avec la nouvelle direction
+			this.serpent.avancerSerpent();	//serpent avance
 			
 			if(perdu())//serpent touche mur, se mord
 			{
 				System.out.println("GAME OVER");break;
 			}
-			this.terrain.setSerpent(this.serpent);//insère serpent
+			
+			this.terrain.setSerpent(this.serpent);//insertion du serpent dans la grille
+			
 			try
 			{
-				this.terrain.setVide(this.serpent.getDernierElement());
+				this.terrain.setVide(this.serpent.getDernierElement()); //insère un 0
 			}
 			catch (PersonnaliserException e1)
 			{
 				// ca ne peut pas arriver
-			}//insère un 0
+			}
+			
 			System.out.println(this.terrain);//affiche le plateau
 	
 			try
@@ -91,7 +113,7 @@ public class PartieAuto
 	{
 		Position tete = this.serpent.getTete();
 		//Touche un mur
-		if(tete.getX()==0 || tete.getX()==this.terrain.LARGEUR || tete.getY()==0 || tete.getY()==this.terrain.HAUTEUR)
+		if(tete.getX()==0 || tete.getX()==this.terrain.LARGEUR-1 || tete.getY()==0 || tete.getY()==this.terrain.HAUTEUR-1)
 		{
 			return true;
 		}
@@ -104,10 +126,6 @@ public class PartieAuto
 				return true;
 			}
 		}
-		
 		return false;
 	}
-	
-	
-	
 }

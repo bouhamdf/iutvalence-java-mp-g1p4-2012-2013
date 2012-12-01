@@ -24,7 +24,6 @@ public class Grenouille
 	 */
 	public Grenouille()
 	{
-
 		this.position = randomGrenouille();
 	}
 
@@ -56,6 +55,22 @@ public class Grenouille
 	public void changerPosGrenouille()
 	{
 		this.position = randomGrenouille();
+	}
+	
+	/**
+	 * Méthode qui vérife que la grenouille ne soit pas instanciée sur le serpent
+	 * @param s
+	 * @return
+	 */
+	public void verifPosGrenouille(Serpent s)
+	{
+		for(int i=0;i<s.getTailleSerpent()-1;i++)
+		{
+			if(s.getCorps(i).getX() == this.getPosition().getX() && s.getCorps(i).getY() == this.getPosition().getY())
+			{
+				changerPosGrenouille();
+			}
+		}
 	}
 	
 	/**
