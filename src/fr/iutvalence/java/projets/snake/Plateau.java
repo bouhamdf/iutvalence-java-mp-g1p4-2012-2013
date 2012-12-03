@@ -93,7 +93,6 @@ public class Plateau
 		this.grille[g.getPosition().getX()][g.getPosition().getY()] = Case.GRENOUILLE;
 	}
 	
-	// FIXME (FIXED) gérer les débordements avec une exception
 	/**
 	 * Met un zero dans la grille à la position donnée
 	 * @param pos
@@ -106,7 +105,9 @@ public class Plateau
 			int x = pos.getX(), y = pos.getY();
 			this.grille[x][y] = Case.VIDE;
 		}
+		// FIXME tester d'abord les cas d'erreurs, cela évite le else
 		else
+			// FIXME trouver un nom correct
 			throw new PersonnaliserException();
 	}
 	
