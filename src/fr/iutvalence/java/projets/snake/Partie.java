@@ -128,5 +128,5 @@ public class Partie
 		}
 		
 		return false;
-	}	
+	}
 }

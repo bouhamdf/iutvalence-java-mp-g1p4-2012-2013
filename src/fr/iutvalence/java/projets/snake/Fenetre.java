@@ -3,6 +3,7 @@ package fr.iutvalence.java.projets.snake;
 import java.awt.Graphics;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -41,5 +42,9 @@ public class Fenetre extends JFrame
 	    
 		//Affichage de la fenêtre
 	    this.setVisible(true);
+	    
+	    //Afficher texte
+	    JLabel label = new JLabel("Bienvenue dans ma modeste application");
+	    content.add(label);
 	}
 }
